@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LK.Control", "LK.Control\LK.Control.csproj", "{BA92896D-78D8-4CB6-A80F-4D383E4E8878}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LK.Control.Tests", "LK.Control.Tests\LK.Control.Tests.csproj", "{EE02E3DB-92E6-4E98-BC1E-F5E19FD681AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA92896D-78D8-4CB6-A80F-4D383E4E8878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA92896D-78D8-4CB6-A80F-4D383E4E8878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA92896D-78D8-4CB6-A80F-4D383E4E8878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA92896D-78D8-4CB6-A80F-4D383E4E8878}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE02E3DB-92E6-4E98-BC1E-F5E19FD681AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE02E3DB-92E6-4E98-BC1E-F5E19FD681AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE02E3DB-92E6-4E98-BC1E-F5E19FD681AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE02E3DB-92E6-4E98-BC1E-F5E19FD681AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
