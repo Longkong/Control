@@ -7,4 +7,44 @@
 
 @section scripts{
     <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/lk/Controller/SearchUICtrl.js"></script>
 }
+<div ng-app>
+    <div ng-controller="SearchUICtrl">
+        <table>
+            <tr>
+                <td>
+                    <div style="padding-top:2em">
+                        Search:<input ng-model="query" ng-change="doquery()" />
+                        <button ng-click="dosearch()">Search</button>
+                        <ul ng-repeat="filter in SearchUI.filters">
+                            <li>{{filter.name}} : {{query}}</li>
+                            <li>
+                                <ul>
+                                    <li ng-repeat="result in filter.results">{{result.Name}}
+                <span>{{result.Description}}</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                <h4>This Is List</h4>
+                    <div>
+                        <ul>
+                            <li ng-repeat="sresult in sresults |filter:query">{{sresult.Code}}
+                        <span>{{sresult.DocDate}}</span>
+                                <span>{{sresult.CreateDate}}</span>
+                                <span>{{sresult.CreateBy}}</span>
+                                <span>{{sresult.master1}}</span>
+                                <span>{{sresult.master2}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,1442 @@
+﻿[
+        {
+            "Id": 1,
+            "Code": "minim",
+            "DocDate": "1991-08-21",
+            "CreateDate": "2006-12-10",
+            "CreateBy": "Evelyn, Michaelson",
+            "master1Id": 100,
+            "master1": "US Infratouch",
+            "master2Id": 46,
+            "master2": "vel",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "velit",
+                    "Description": "Iusto duis qui."
+                },
+                {
+                    "Id": 2,
+                    "name": "adipiscing",
+                    "Description": "Dignissim feugait amet."
+                },
+                {
+                    "Id": 3,
+                    "name": "quis",
+                    "Description": "Magna consectetuer illum."
+                },
+                {
+                    "Id": 4,
+                    "name": "odio",
+                    "Description": "Blandit erat esse."
+                }
+            ]
+        },
+        {
+            "Id": 2,
+            "Code": "at",
+            "DocDate": "2011-04-25",
+            "CreateDate": "1988-04-22",
+            "CreateBy": "Trinity, Campbell",
+            "master1Id": 30,
+            "master1": "Polytheon",
+            "master2Id": 74,
+            "master2": "blandit",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "eros",
+                    "Description": "Diam consequat suscipit."
+                }
+            ]
+        },
+        {
+            "Id": 3,
+            "Code": "ut",
+            "DocDate": "1990-04-04",
+            "CreateDate": "2007-08-28",
+            "CreateBy": "Layla, Sheldon",
+            "master1Id": 47,
+            "master1": "Superscope",
+            "master2Id": 49,
+            "master2": "veniam",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "magna",
+                    "Description": "Duis eros dignissim."
+                },
+                {
+                    "Id": 2,
+                    "name": "nibh",
+                    "Description": "Nostrud vero in."
+                },
+                {
+                    "Id": 3,
+                    "name": "velit",
+                    "Description": "Dignissim lobortis odio."
+                },
+                {
+                    "Id": 4,
+                    "name": "eros",
+                    "Description": "Vero consequat ullamcorper."
+                }
+            ]
+        },
+        {
+            "Id": 4,
+            "Code": "sed",
+            "DocDate": "2007-06-02",
+            "CreateDate": "2010-09-11",
+            "CreateBy": "Samantha, Cramer",
+            "master1Id": 38,
+            "master1": "Quintegrity",
+            "master2Id": 13,
+            "master2": "feugiat",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "eu",
+                    "Description": "Magna vulputate delenit."
+                },
+                {
+                    "Id": 2,
+                    "name": "sit",
+                    "Description": "Sit consectetuer adipiscing."
+                },
+                {
+                    "Id": 3,
+                    "name": "odio",
+                    "Description": "Lobortis accumsan esse."
+                },
+                {
+                    "Id": 4,
+                    "name": "tation",
+                    "Description": "Sit qui ut."
+                }
+            ]
+        },
+        {
+            "Id": 5,
+            "Code": "dignissim",
+            "DocDate": "2004-04-03",
+            "CreateDate": "1988-12-10",
+            "CreateBy": "Vanessa, Chesterton",
+            "master1Id": 80,
+            "master1": "Turbomart",
+            "master2Id": 98,
+            "master2": "vulputate",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "eum",
+                    "Description": "Augue consectetuer esse."
+                }
+            ]
+        },
+        {
+            "Id": 6,
+            "Code": "et",
+            "DocDate": "2004-05-25",
+            "CreateDate": "1992-04-09",
+            "CreateBy": "Hailey, Chesterton",
+            "master1Id": 100,
+            "master1": "Orthomedia",
+            "master2Id": 74,
+            "master2": "tincidunt",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "ad",
+                    "Description": "Duis ad velit."
+                },
+                {
+                    "Id": 2,
+                    "name": "ut",
+                    "Description": "Amet vulputate eum."
+                },
+                {
+                    "Id": 3,
+                    "name": "sit",
+                    "Description": "Et delenit aliquip."
+                },
+                {
+                    "Id": 4,
+                    "name": "feugiat",
+                    "Description": "Dolore veniam blandit."
+                }
+            ]
+        },
+        {
+            "Id": 7,
+            "Code": "dolore",
+            "DocDate": "1994-08-26",
+            "CreateDate": "2008-12-24",
+            "CreateBy": "Serenity, Goldman",
+            "master1Id": 8,
+            "master1": "iMedconik",
+            "master2Id": 31,
+            "master2": "diam",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "illum",
+                    "Description": "Suscipit dolore at."
+                }
+            ]
+        },
+        {
+            "Id": 8,
+            "Code": "eu",
+            "DocDate": "1989-05-23",
+            "CreateDate": "1996-05-30",
+            "CreateBy": "Sophie, Nathan",
+            "master1Id": 84,
+            "master1": "iQualcar",
+            "master2Id": 10,
+            "master2": "lorem",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "consectetuer",
+                    "Description": "Erat quis euismod."
+                },
+                {
+                    "Id": 2,
+                    "name": "ut",
+                    "Description": "Vel aliquip magna."
+                },
+                {
+                    "Id": 3,
+                    "name": "dolore",
+                    "Description": "Qui feugait sit."
+                },
+                {
+                    "Id": 4,
+                    "name": "vel",
+                    "Description": "Eu duis vero."
+                }
+            ]
+        },
+        {
+            "Id": 9,
+            "Code": "sed",
+            "DocDate": "1999-09-17",
+            "CreateDate": "2003-11-12",
+            "CreateBy": "Faith, Milton",
+            "master1Id": 96,
+            "master1": "Cryptotegrity",
+            "master2Id": 96,
+            "master2": "ullamcorper",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "hendrerit",
+                    "Description": "Euismod volutpat ipsum."
+                },
+                {
+                    "Id": 2,
+                    "name": "vel",
+                    "Description": "Duis commodo consequat."
+                },
+                {
+                    "Id": 3,
+                    "name": "euismod",
+                    "Description": "Adipiscing velit dolore."
+                }
+            ]
+        },
+        {
+            "Id": 10,
+            "Code": "consequat",
+            "DocDate": "2005-01-21",
+            "CreateDate": "2007-02-16",
+            "CreateBy": "Chloe, Nelson",
+            "master1Id": 34,
+            "master1": "Fibroserve",
+            "master2Id": 28,
+            "master2": "aliquip",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "ex",
+                    "Description": "Nulla dignissim veniam."
+                },
+                {
+                    "Id": 2,
+                    "name": "at",
+                    "Description": "Eum zzril tation."
+                },
+                {
+                    "Id": 3,
+                    "name": "laoreet",
+                    "Description": "Lorem eros nulla."
+                },
+                {
+                    "Id": 4,
+                    "name": "magna",
+                    "Description": "Et molestie enim."
+                },
+                {
+                    "Id": 5,
+                    "name": "laoreet",
+                    "Description": "Lobortis ut vel."
+                }
+            ]
+        },
+        {
+            "Id": 11,
+            "Code": "wisi",
+            "DocDate": "1994-01-09",
+            "CreateDate": "2000-07-21",
+            "CreateBy": "Isabella, Young",
+            "master1Id": 57,
+            "master1": "Netsystems",
+            "master2Id": 76,
+            "master2": "et",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "feugait",
+                    "Description": "Praesent vulputate ex."
+                },
+                {
+                    "Id": 2,
+                    "name": "vel",
+                    "Description": "At facilisi laoreet."
+                }
+            ]
+        },
+        {
+            "Id": 12,
+            "Code": "zzril",
+            "DocDate": "2012-06-08",
+            "CreateDate": "2013-03-16",
+            "CreateBy": "Camila, Galbraith",
+            "master1Id": 66,
+            "master1": "Allnet",
+            "master2Id": 40,
+            "master2": "zzril",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "ut",
+                    "Description": "Lobortis dolore esse."
+                },
+                {
+                    "Id": 2,
+                    "name": "augue",
+                    "Description": "Amet qui dolor."
+                },
+                {
+                    "Id": 3,
+                    "name": "dolore",
+                    "Description": "Feugiat at ut."
+                }
+            ]
+        },
+        {
+            "Id": 13,
+            "Code": "veniam",
+            "DocDate": "2000-12-02",
+            "CreateDate": "2003-08-26",
+            "CreateBy": "Charlotte, Higgins",
+            "master1Id": 54,
+            "master1": "Ventanium",
+            "master2Id": 34,
+            "master2": "ut",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "at",
+                    "Description": "Consectetuer duis nostrud."
+                },
+                {
+                    "Id": 2,
+                    "name": "lorem",
+                    "Description": "Consequat tincidunt iusto."
+                },
+                {
+                    "Id": 3,
+                    "name": "eum",
+                    "Description": "Dolor ipsum ut."
+                },
+                {
+                    "Id": 4,
+                    "name": "feugait",
+                    "Description": "Illum vel aliquip."
+                },
+                {
+                    "Id": 5,
+                    "name": "ad",
+                    "Description": "Erat esse volutpat."
+                }
+            ]
+        },
+        {
+            "Id": 14,
+            "Code": "feugiat",
+            "DocDate": "1988-11-02",
+            "CreateDate": "1999-07-01",
+            "CreateBy": "Jasmine, Waller",
+            "master1Id": 91,
+            "master1": "iEnland",
+            "master2Id": 66,
+            "master2": "ad",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "facilisis",
+                    "Description": "In sed enim."
+                },
+                {
+                    "Id": 2,
+                    "name": "quis",
+                    "Description": "Eros aliquip feugait."
+                },
+                {
+                    "Id": 3,
+                    "name": "magna",
+                    "Description": "Ea molestie blandit."
+                },
+                {
+                    "Id": 4,
+                    "name": "vero",
+                    "Description": "Commodo molestie amet."
+                },
+                {
+                    "Id": 5,
+                    "name": "wisi",
+                    "Description": "Dolore tincidunt aliquam."
+                }
+            ]
+        },
+        {
+            "Id": 15,
+            "Code": "veniam",
+            "DocDate": "2006-01-07",
+            "CreateDate": "1995-09-13",
+            "CreateBy": "Gianna, Fisher",
+            "master1Id": 65,
+            "master1": "Entcast",
+            "master2Id": 85,
+            "master2": "accumsan",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "blandit",
+                    "Description": "Sed ullamcorper nulla."
+                },
+                {
+                    "Id": 2,
+                    "name": "illum",
+                    "Description": "Tincidunt tincidunt commodo."
+                },
+                {
+                    "Id": 3,
+                    "name": "te",
+                    "Description": "Odio eros ex."
+                }
+            ]
+        },
+        {
+            "Id": 16,
+            "Code": "elit",
+            "DocDate": "1988-03-15",
+            "CreateDate": "2004-10-02",
+            "CreateBy": "Grace, Hodges",
+            "master1Id": 31,
+            "master1": "Titanirola",
+            "master2Id": 22,
+            "master2": "feugiat",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "tation",
+                    "Description": "Eros tincidunt duis."
+                },
+                {
+                    "Id": 2,
+                    "name": "volutpat",
+                    "Description": "Augue vel elit."
+                }
+            ]
+        },
+        {
+            "Id": 17,
+            "Code": "ad",
+            "DocDate": "2011-12-08",
+            "CreateDate": "2001-01-08",
+            "CreateBy": "Eva, Hancock",
+            "master1Id": 44,
+            "master1": "Skydata",
+            "master2Id": 96,
+            "master2": "et",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "tation",
+                    "Description": "Ut eu ut."
+                },
+                {
+                    "Id": 2,
+                    "name": "enim",
+                    "Description": "Zzril et laoreet."
+                },
+                {
+                    "Id": 3,
+                    "name": "dolor",
+                    "Description": "Vel delenit minim."
+                },
+                {
+                    "Id": 4,
+                    "name": "quis",
+                    "Description": "Odio lobortis zzril."
+                },
+                {
+                    "Id": 5,
+                    "name": "in",
+                    "Description": "Aliquip ipsum praesent."
+                }
+            ]
+        },
+        {
+            "Id": 18,
+            "Code": "nostrud",
+            "DocDate": "2012-12-10",
+            "CreateDate": "2007-07-05",
+            "CreateBy": "Alyssa, Miers",
+            "master1Id": 97,
+            "master1": "Aluco",
+            "master2Id": 91,
+            "master2": "exerci",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "tincidunt",
+                    "Description": "Dolor te blandit."
+                }
+            ]
+        },
+        {
+            "Id": 19,
+            "Code": "tincidunt",
+            "DocDate": "2003-05-17",
+            "CreateDate": "2006-01-16",
+            "CreateBy": "Maya, Miller",
+            "master1Id": 53,
+            "master1": "Conrama",
+            "master2Id": 37,
+            "master2": "iriure",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "nonummy",
+                    "Description": "In minim velit."
+                },
+                {
+                    "Id": 2,
+                    "name": "te",
+                    "Description": "Praesent te nibh."
+                },
+                {
+                    "Id": 3,
+                    "name": "praesent",
+                    "Description": "Aliquip tation veniam."
+                },
+                {
+                    "Id": 4,
+                    "name": "tation",
+                    "Description": "Adipiscing lobortis feugiat."
+                }
+            ]
+        },
+        {
+            "Id": 20,
+            "Code": "minim",
+            "DocDate": "2008-01-19",
+            "CreateDate": "2001-04-18",
+            "CreateBy": "Nevaeh, Brooks",
+            "master1Id": 7,
+            "master1": "Robotemplate",
+            "master2Id": 6,
+            "master2": "dolore",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "feugiat",
+                    "Description": "Dolor velit praesent."
+                },
+                {
+                    "Id": 2,
+                    "name": "volutpat",
+                    "Description": "Lobortis tation eum."
+                },
+                {
+                    "Id": 3,
+                    "name": "odio",
+                    "Description": "Dolor quis facilisi."
+                },
+                {
+                    "Id": 4,
+                    "name": "facilisis",
+                    "Description": "Nibh qui ipsum."
+                }
+            ]
+        },
+        {
+            "Id": 21,
+            "Code": "dolore",
+            "DocDate": "1989-03-30",
+            "CreateDate": "2009-11-25",
+            "CreateBy": "Nevaeh, Nelson",
+            "master1Id": 11,
+            "master1": "Infragraph",
+            "master2Id": 29,
+            "master2": "qui",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "zzril",
+                    "Description": "Aliquam augue adipiscing."
+                },
+                {
+                    "Id": 2,
+                    "name": "ut",
+                    "Description": "Illum nonummy velit."
+                },
+                {
+                    "Id": 3,
+                    "name": "tation",
+                    "Description": "Exerci dolor eum."
+                },
+                {
+                    "Id": 4,
+                    "name": "eu",
+                    "Description": "Enim euismod amet."
+                }
+            ]
+        },
+        {
+            "Id": 22,
+            "Code": "amet",
+            "DocDate": "2009-02-15",
+            "CreateDate": "2007-07-24",
+            "CreateBy": "Anna, Ward",
+            "master1Id": 50,
+            "master1": "Fibrotouch",
+            "master2Id": 85,
+            "master2": "vel",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "consequat",
+                    "Description": "Enim et erat."
+                },
+                {
+                    "Id": 2,
+                    "name": "velit",
+                    "Description": "Illum magna ipsum."
+                }
+            ]
+        },
+        {
+            "Id": 23,
+            "Code": "lobortis",
+            "DocDate": "1994-07-04",
+            "CreateDate": "2012-09-23",
+            "CreateBy": "Sarah, Young",
+            "master1Id": 76,
+            "master1": "Raylog",
+            "master2Id": 46,
+            "master2": "tincidunt",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "facilisi",
+                    "Description": "Dolore commodo iriure."
+                },
+                {
+                    "Id": 2,
+                    "name": "nisl",
+                    "Description": "Te duis delenit."
+                },
+                {
+                    "Id": 3,
+                    "name": "duis",
+                    "Description": "Iriure minim dolore."
+                },
+                {
+                    "Id": 4,
+                    "name": "sit",
+                    "Description": "Facilisi ut zzril."
+                }
+            ]
+        },
+        {
+            "Id": 24,
+            "Code": "nostrud",
+            "DocDate": "1999-09-22",
+            "CreateDate": "2005-05-01",
+            "CreateBy": "Lillian, Davidson",
+            "master1Id": 53,
+            "master1": "US Infratouch",
+            "master2Id": 80,
+            "master2": "molestie",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "in",
+                    "Description": "Et veniam nulla."
+                },
+                {
+                    "Id": 2,
+                    "name": "elit",
+                    "Description": "Delenit dolor nulla."
+                },
+                {
+                    "Id": 3,
+                    "name": "dolor",
+                    "Description": "Nostrud dolor dignissim."
+                },
+                {
+                    "Id": 4,
+                    "name": "nonummy",
+                    "Description": "Wisi zzril ex."
+                }
+            ]
+        },
+        {
+            "Id": 25,
+            "Code": "magna",
+            "DocDate": "2006-02-22",
+            "CreateDate": "1988-10-21",
+            "CreateBy": "Jasmine, Gill",
+            "master1Id": 48,
+            "master1": "Orthomedia",
+            "master2Id": 54,
+            "master2": "exerci",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "dignissim",
+                    "Description": "Augue magna commodo."
+                },
+                {
+                    "Id": 2,
+                    "name": "qui",
+                    "Description": "Ex illum consectetuer."
+                },
+                {
+                    "Id": 3,
+                    "name": "sit",
+                    "Description": "Elit nostrud iriure."
+                },
+                {
+                    "Id": 4,
+                    "name": "aliquam",
+                    "Description": "Ad iriure ad."
+                },
+                {
+                    "Id": 5,
+                    "name": "velit",
+                    "Description": "Iriure feugait nibh."
+                }
+            ]
+        },
+        {
+            "Id": 26,
+            "Code": "eum",
+            "DocDate": "1988-12-22",
+            "CreateDate": "1989-08-10",
+            "CreateBy": "Payton, Webster",
+            "master1Id": 37,
+            "master1": "Jamconik",
+            "master2Id": 96,
+            "master2": "lorem",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "sit",
+                    "Description": "In nulla amet."
+                },
+                {
+                    "Id": 2,
+                    "name": "duis",
+                    "Description": "Dolor elit suscipit."
+                },
+                {
+                    "Id": 3,
+                    "name": "commodo",
+                    "Description": "Aliquam ut veniam."
+                },
+                {
+                    "Id": 4,
+                    "name": "magna",
+                    "Description": "Accumsan in te."
+                },
+                {
+                    "Id": 5,
+                    "name": "adipiscing",
+                    "Description": "Minim volutpat nibh."
+                }
+            ]
+        },
+        {
+            "Id": 27,
+            "Code": "erat",
+            "DocDate": "2011-10-25",
+            "CreateDate": "2003-02-24",
+            "CreateBy": "Morgan, Goodman",
+            "master1Id": 61,
+            "master1": "Westgate",
+            "master2Id": 63,
+            "master2": "at",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "dolore",
+                    "Description": "Ut consequat blandit."
+                },
+                {
+                    "Id": 2,
+                    "name": "praesent",
+                    "Description": "Vulputate ut hendrerit."
+                },
+                {
+                    "Id": 3,
+                    "name": "commodo",
+                    "Description": "Facilisis vel adipiscing."
+                }
+            ]
+        },
+        {
+            "Id": 28,
+            "Code": "laoreet",
+            "DocDate": "2000-02-25",
+            "CreateDate": "1996-10-07",
+            "CreateBy": "Brooke, Vaughan",
+            "master1Id": 25,
+            "master1": "SysVenamerica",
+            "master2Id": 36,
+            "master2": "commodo",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "nostrud",
+                    "Description": "Illum consectetuer iriure."
+                },
+                {
+                    "Id": 2,
+                    "name": "nulla",
+                    "Description": "Minim eum laoreet."
+                },
+                {
+                    "Id": 3,
+                    "name": "at",
+                    "Description": "Eu et euismod."
+                },
+                {
+                    "Id": 4,
+                    "name": "vel",
+                    "Description": "Veniam ut duis."
+                },
+                {
+                    "Id": 5,
+                    "name": "delenit",
+                    "Description": "Ut dolor volutpat."
+                }
+            ]
+        },
+        {
+            "Id": 29,
+            "Code": "esse",
+            "DocDate": "1999-02-23",
+            "CreateDate": "2001-05-04",
+            "CreateBy": "Alexa, Wainwright",
+            "master1Id": 97,
+            "master1": "iEnland",
+            "master2Id": 36,
+            "master2": "et",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "lobortis",
+                    "Description": "Iusto eum illum."
+                }
+            ]
+        },
+        {
+            "Id": 30,
+            "Code": "iriure",
+            "DocDate": "2005-11-24",
+            "CreateDate": "2010-06-14",
+            "CreateBy": "Aaliyah, Carroll",
+            "master1Id": 19,
+            "master1": "Nanobanc",
+            "master2Id": 19,
+            "master2": "iriure",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "ut",
+                    "Description": "Amet tation vel."
+                },
+                {
+                    "Id": 2,
+                    "name": "hendrerit",
+                    "Description": "Nibh consectetuer ea."
+                }
+            ]
+        },
+        {
+            "Id": 31,
+            "Code": "vero",
+            "DocDate": "1999-04-19",
+            "CreateDate": "2009-11-05",
+            "CreateBy": "Evelyn, Daniels",
+            "master1Id": 9,
+            "master1": "Systheon",
+            "master2Id": 9,
+            "master2": "hendrerit",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "erat",
+                    "Description": "Volutpat blandit nibh."
+                }
+            ]
+        },
+        {
+            "Id": 32,
+            "Code": "feugait",
+            "DocDate": "2007-04-21",
+            "CreateDate": "2007-06-12",
+            "CreateBy": "Rachel, Carrington",
+            "master1Id": 82,
+            "master1": "Qualserve",
+            "master2Id": 94,
+            "master2": "aliquip",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "blandit",
+                    "Description": "Aliquam te accumsan."
+                },
+                {
+                    "Id": 2,
+                    "name": "eu",
+                    "Description": "In et aliquam."
+                }
+            ]
+        },
+        {
+            "Id": 33,
+            "Code": "laoreet",
+            "DocDate": "1997-01-31",
+            "CreateDate": "1989-08-26",
+            "CreateBy": "Lily, Nelson",
+            "master1Id": 27,
+            "master1": "Thermotomic",
+            "master2Id": 6,
+            "master2": "laoreet",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "elit",
+                    "Description": "Augue velit ea."
+                }
+            ]
+        },
+        {
+            "Id": 34,
+            "Code": "illum",
+            "DocDate": "2002-02-06",
+            "CreateDate": "2007-10-22",
+            "CreateBy": "Camila, Hodges",
+            "master1Id": 72,
+            "master1": "Safeagra",
+            "master2Id": 33,
+            "master2": "eros",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "lobortis",
+                    "Description": "Feugiat eum nibh."
+                },
+                {
+                    "Id": 2,
+                    "name": "augue",
+                    "Description": "Consequat facilisis te."
+                },
+                {
+                    "Id": 3,
+                    "name": "dolore",
+                    "Description": "In minim elit."
+                },
+                {
+                    "Id": 4,
+                    "name": "nulla",
+                    "Description": "Eros magna lobortis."
+                },
+                {
+                    "Id": 5,
+                    "name": "veniam",
+                    "Description": "Ipsum lorem esse."
+                }
+            ]
+        },
+        {
+            "Id": 35,
+            "Code": "vel",
+            "DocDate": "1993-08-01",
+            "CreateDate": "1991-10-21",
+            "CreateBy": "Hannah, Gilson",
+            "master1Id": 26,
+            "master1": "Netsystems",
+            "master2Id": 52,
+            "master2": "dignissim",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "consequat",
+                    "Description": "Euismod odio iusto."
+                },
+                {
+                    "Id": 2,
+                    "name": "sit",
+                    "Description": "Dolore dolor nonummy."
+                }
+            ]
+        },
+        {
+            "Id": 36,
+            "Code": "eros",
+            "DocDate": "2007-11-14",
+            "CreateDate": "2007-06-26",
+            "CreateBy": "Aaliyah, Gilson",
+            "master1Id": 51,
+            "master1": "Truetomic",
+            "master2Id": 66,
+            "master2": "quis",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "quis",
+                    "Description": "Ullamcorper molestie in."
+                },
+                {
+                    "Id": 2,
+                    "name": "ut",
+                    "Description": "Nibh duis nisl."
+                },
+                {
+                    "Id": 3,
+                    "name": "elit",
+                    "Description": "Vel facilisi vulputate."
+                }
+            ]
+        },
+        {
+            "Id": 37,
+            "Code": "lobortis",
+            "DocDate": "1993-07-17",
+            "CreateDate": "1998-01-28",
+            "CreateBy": "Hailey, Winter",
+            "master1Id": 36,
+            "master1": "Safetrust",
+            "master2Id": 28,
+            "master2": "eros",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "velit",
+                    "Description": "Nostrud lobortis autem."
+                },
+                {
+                    "Id": 2,
+                    "name": "accumsan",
+                    "Description": "Velit exerci et."
+                }
+            ]
+        },
+        {
+            "Id": 38,
+            "Code": "aliquam",
+            "DocDate": "1993-07-21",
+            "CreateDate": "2003-09-08",
+            "CreateBy": "Jessica, Stanley",
+            "master1Id": 11,
+            "master1": "Cryptotegrity",
+            "master2Id": 20,
+            "master2": "tation",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "ea",
+                    "Description": "Te lorem nisl."
+                },
+                {
+                    "Id": 2,
+                    "name": "elit",
+                    "Description": "Ut consectetuer dignissim."
+                },
+                {
+                    "Id": 3,
+                    "name": "iriure",
+                    "Description": "At tincidunt ullamcorper."
+                }
+            ]
+        },
+        {
+            "Id": 39,
+            "Code": "veniam",
+            "DocDate": "2002-01-08",
+            "CreateDate": "1991-03-20",
+            "CreateBy": "Hannah, Ford",
+            "master1Id": 57,
+            "master1": "Hypervaco",
+            "master2Id": 48,
+            "master2": "eros",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "magna",
+                    "Description": "Facilisis consectetuer veniam."
+                },
+                {
+                    "Id": 2,
+                    "name": "ut",
+                    "Description": "Tation iriure dolore."
+                },
+                {
+                    "Id": 3,
+                    "name": "velit",
+                    "Description": "Aliquip amet odio."
+                },
+                {
+                    "Id": 4,
+                    "name": "augue",
+                    "Description": "Iusto vel at."
+                }
+            ]
+        },
+        {
+            "Id": 40,
+            "Code": "delenit",
+            "DocDate": "1988-12-13",
+            "CreateDate": "1990-04-16",
+            "CreateBy": "Alexis, Gilbert",
+            "master1Id": 60,
+            "master1": "iSkyvaco",
+            "master2Id": 47,
+            "master2": "praesent",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "iusto",
+                    "Description": "Tation feugait dolore."
+                },
+                {
+                    "Id": 2,
+                    "name": "laoreet",
+                    "Description": "Facilisi erat ullamcorper."
+                },
+                {
+                    "Id": 3,
+                    "name": "eu",
+                    "Description": "Qui nostrud at."
+                }
+            ]
+        },
+        {
+            "Id": 41,
+            "Code": "ullamcorper",
+            "DocDate": "1997-08-18",
+            "CreateDate": "1993-05-08",
+            "CreateBy": "Arianna, Young",
+            "master1Id": 79,
+            "master1": "RoboAerlogix",
+            "master2Id": 81,
+            "master2": "in",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "lorem",
+                    "Description": "Nulla molestie blandit."
+                }
+            ]
+        },
+        {
+            "Id": 42,
+            "Code": "amet",
+            "DocDate": "1989-12-20",
+            "CreateDate": "1990-10-06",
+            "CreateBy": "Peyton, Higgins",
+            "master1Id": 41,
+            "master1": "Indisco",
+            "master2Id": 18,
+            "master2": "delenit",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "vero",
+                    "Description": "Hendrerit minim tincidunt."
+                },
+                {
+                    "Id": 2,
+                    "name": "vel",
+                    "Description": "In autem zzril."
+                },
+                {
+                    "Id": 3,
+                    "name": "molestie",
+                    "Description": "Praesent te exerci."
+                },
+                {
+                    "Id": 4,
+                    "name": "delenit",
+                    "Description": "Nisl hendrerit luptatum."
+                },
+                {
+                    "Id": 5,
+                    "name": "suscipit",
+                    "Description": "Quis laoreet hendrerit."
+                }
+            ]
+        },
+        {
+            "Id": 43,
+            "Code": "qui",
+            "DocDate": "1991-07-05",
+            "CreateDate": "2001-01-27",
+            "CreateBy": "Jessica, Clapton",
+            "master1Id": 72,
+            "master1": "Pacwest",
+            "master2Id": 30,
+            "master2": "nostrud",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "augue",
+                    "Description": "Ut vel tincidunt."
+                }
+            ]
+        },
+        {
+            "Id": 44,
+            "Code": "qui",
+            "DocDate": "2007-02-12",
+            "CreateDate": "2001-05-18",
+            "CreateBy": "Camila, Michaelson",
+            "master1Id": 50,
+            "master1": "Techtron",
+            "master2Id": 85,
+            "master2": "facilisi",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "blandit",
+                    "Description": "Illum sit dolor."
+                },
+                {
+                    "Id": 2,
+                    "name": "et",
+                    "Description": "Et vel in."
+                },
+                {
+                    "Id": 3,
+                    "name": "nonummy",
+                    "Description": "Tincidunt veniam feugait."
+                },
+                {
+                    "Id": 4,
+                    "name": "magna",
+                    "Description": "Iusto nonummy nonummy."
+                },
+                {
+                    "Id": 5,
+                    "name": "ut",
+                    "Description": "Augue sit consectetuer."
+                }
+            ]
+        },
+        {
+            "Id": 45,
+            "Code": "dolore",
+            "DocDate": "2008-07-19",
+            "CreateDate": "1999-07-31",
+            "CreateBy": "Aubrey, Sheldon",
+            "master1Id": 54,
+            "master1": "Thermotomic",
+            "master2Id": 11,
+            "master2": "tincidunt",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "dolore",
+                    "Description": "Vero feugiat dolore."
+                },
+                {
+                    "Id": 2,
+                    "name": "autem",
+                    "Description": "Et in wisi."
+                }
+            ]
+        },
+        {
+            "Id": 46,
+            "Code": "volutpat",
+            "DocDate": "1995-05-08",
+            "CreateDate": "1993-11-26",
+            "CreateBy": "Jocelyn, Mercer",
+            "master1Id": 76,
+            "master1": "Qualserve",
+            "master2Id": 80,
+            "master2": "dolore",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "luptatum",
+                    "Description": "Duis feugait erat."
+                },
+                {
+                    "Id": 2,
+                    "name": "commodo",
+                    "Description": "Diam dolor consequat."
+                },
+                {
+                    "Id": 3,
+                    "name": "aliquip",
+                    "Description": "Commodo consequat lobortis."
+                }
+            ]
+        },
+        {
+            "Id": 47,
+            "Code": "sit",
+            "DocDate": "1992-11-06",
+            "CreateDate": "1992-01-01",
+            "CreateBy": "Faith, Morrison",
+            "master1Id": 38,
+            "master1": "Dynarama",
+            "master2Id": 64,
+            "master2": "dolore",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "eum",
+                    "Description": "Accumsan consectetuer ut."
+                },
+                {
+                    "Id": 2,
+                    "name": "ea",
+                    "Description": "Tincidunt vulputate enim."
+                },
+                {
+                    "Id": 3,
+                    "name": "quis",
+                    "Description": "Vero velit exerci."
+                }
+            ]
+        },
+        {
+            "Id": 48,
+            "Code": "ea",
+            "DocDate": "1997-10-02",
+            "CreateDate": "1991-06-11",
+            "CreateBy": "Chloe, Warren",
+            "master1Id": 75,
+            "master1": "Fibrotouch",
+            "master2Id": 86,
+            "master2": "nonummy",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "praesent",
+                    "Description": "Feugait nonummy eros."
+                },
+                {
+                    "Id": 2,
+                    "name": "dolor",
+                    "Description": "Elit feugait praesent."
+                },
+                {
+                    "Id": 3,
+                    "name": "dolore",
+                    "Description": "Volutpat accumsan ullamcorper."
+                }
+            ]
+        },
+        {
+            "Id": 49,
+            "Code": "nibh",
+            "DocDate": "2000-03-27",
+            "CreateDate": "1989-10-17",
+            "CreateBy": "Layla, Hailey",
+            "master1Id": 51,
+            "master1": "Truetomic",
+            "master2Id": 74,
+            "master2": "in",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "duis",
+                    "Description": "Vero feugait dolore."
+                },
+                {
+                    "Id": 2,
+                    "name": "laoreet",
+                    "Description": "Zzril nulla blandit."
+                },
+                {
+                    "Id": 3,
+                    "name": "aliquip",
+                    "Description": "Odio consequat vel."
+                },
+                {
+                    "Id": 4,
+                    "name": "delenit",
+                    "Description": "Laoreet nulla et."
+                }
+            ]
+        },
+        {
+            "Id": 50,
+            "Code": "elit",
+            "DocDate": "2010-03-15",
+            "CreateDate": "1988-01-26",
+            "CreateBy": "Zoey, Gustman",
+            "master1Id": 8,
+            "master1": "Inridium",
+            "master2Id": 76,
+            "master2": "wisi",
+            "master3s": [
+                {
+                    "Id": 1,
+                    "name": "amet",
+                    "Description": "Nostrud ex odio."
+                },
+                {
+                    "Id": 2,
+                    "name": "tation",
+                    "Description": "Ullamcorper et te."
+                },
+                {
+                    "Id": 3,
+                    "name": "et",
+                    "Description": "Vel exerci eu."
+                },
+                {
+                    "Id": 4,
+                    "name": "delenit",
+                    "Description": "Diam magna nulla."
+                },
+                {
+                    "Id": 5,
+                    "name": "ex",
+                    "Description": "Tincidunt ullamcorper vulputate."
+                }
+            ]
+        }
+    ]
