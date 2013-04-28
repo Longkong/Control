@@ -1613,7 +1613,7 @@ angular.module('ui.bootstrap.typeahead', [])
       };
 
       scope.select = function (activeIdx) {
-        //called from within the $digest() cycle
+          //called from within the $digest() cycle
         var locals = {};
         locals[parserResult.itemName] = selected = scope.matches[activeIdx].model;
 
@@ -1676,7 +1676,8 @@ angular.module('ui.bootstrap.typeahead', [])
         };
 
         scope.isActive = function (matchIdx) {
-          return scope.active == matchIdx;
+            console.log('isActive');
+            return scope.active == matchIdx;
         };
 
         scope.selectActive = function (matchIdx) {
@@ -1684,7 +1685,7 @@ angular.module('ui.bootstrap.typeahead', [])
         };
 
         scope.selectMatch = function (activeIdx) {
-          scope.select({activeIdx:activeIdx});
+            scope.select({ activeIdx: activeIdx });
         };
       }
     };

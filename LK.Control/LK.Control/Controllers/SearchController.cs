@@ -18,6 +18,11 @@ namespace LK.Control.Controllers
             return View();
         }
 
+        public ActionResult Directive()
+        {
+            return View();
+        }
+
         // is Model Context for create 
         [HttpGet]
         public string CreateSearch()

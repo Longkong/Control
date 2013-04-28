@@ -2,6 +2,8 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Data.Linq.SqlClient;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -20,11 +22,42 @@ namespace LK.Control.Controllers
             var jsonData = File.ReadAllText(Path.Combine(PathService.Model(), filename));
 
             var trans = JsonConvert.DeserializeObject<List<DemoTransaction>>(jsonData);
-            if (req != null && !string.IsNullOrEmpty(req))
+            var tokens = JsonConvert.DeserializeObject<List<EntityFilter>>(req);
+
+
+            if (tokens.Count > 0)
             {
-                var q = req;
-                return trans.Where(t=>t.Code.Contains(q) || t.CreateBy.Contains(q) 
-                    || t.master1.Contains(q)||t.master2.Contains(q));
+                IQueryable<DemoTransaction> linkQuery = trans.AsQueryable();
+
+                //hack ก่อนนะ
+                foreach (var token in tokens)
+                {
+                    Func<DemoTransaction, bool> ftoken = null;
+                    var query = "";
+                    switch (token.name.ToLower())
+                    {
+                        case "code":
+                            query = "%["+string.Join("",token.queries)+"]%";
+                            ftoken = t => SqlMethods.Like(t.Code, query);
+                            break;
+                        case "createby":
+                            query = "%["+string.Join("",token.queries)+"]%";
+                            ftoken = t => SqlMethods.Like(t.Code, query);
+                            break;
+                        case "master1":
+                            query = "%["+string.Join("",token.queries)+"]%";
+                            ftoken = t => SqlMethods.Like(t.Code, query);
+                            break;
+                        case "master2":
+                            query = "%["+string.Join("",token.queries)+"]%";
+                            ftoken = t => SqlMethods.Like(t.Code, query);
+                            break;
+                        default:
+                            break;
+                    }
+                    linkQuery = linkQuery.Where(ftoken).AsQueryable();
+                }
+                return linkQuery.ToList();
             }
             return trans;
         }
@@ -37,7 +70,7 @@ namespace LK.Control.Controllers
 
             var trans = JsonConvert.DeserializeObject<List<DemoTransaction>>(jsonData);
 
-            return trans.FirstOrDefault(t=>t.Id == id);
+            return trans.FirstOrDefault(t => t.Id == id);
         }
 
         // POST api/demotransaction

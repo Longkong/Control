@@ -7,22 +7,50 @@
 
 @section scripts{
     <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-ui.js"></script>
     <script src="~/Scripts/lk/Controller/SearchUICtrl.js"></script>
 }
-<div ng-app>
+<h3>To DO</h3>
+<ul>
+    <li>ทำให้ highlight ใน match</li>
+    <li>ทำเป็น dicrective</li>
+    <li>ทำให้ config ได้ตามสมควร</li>
+    <li>ใส่ Css</li>
+</ul>
+<div ng-app="demoApp">
+<h2>This is version Controller</h2>
+<p>have version  @Html.ActionLink("directive","Dicrective")</p>
     <div ng-controller="SearchUICtrl">
         <table>
             <tr>
                 <td>
-                    <div style="padding-top:2em">
-                        Search:<input ng-model="query" ng-change="doquery()" />
+                    <div>
+                        Search:<input ng-model="query" ng-change="doquery()" ui-event="{ blur : 'blurCallback()' }" />
                         <button ng-click="dosearch()">Search</button>
-                        <ul ng-repeat="filter in SearchUI.filters">
-                            <li>{{filter.name}} : {{query}}</li>
+                    </div>
+                </td>
+                <td>
+                    <h4>This Is Token Query</h4>
+                    <ul ng-repeat="token in tokens">
+                        <li>{{token.name}}</li>
+                        <li>
+                            <ul>
+                                <li ng-repeat="tquery in token.queries">{{tquery}}</li>
+                            </ul>
+                        </li>
+                        <li ng-click="removetoken($index)">x</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div ng-show="showdropdown">
+                        <h3>This Is Dropdown list</h3>
+                        <ul ng-repeat="filter in filters">
+                            <li ng-mouseover="filterMouseOver($index)" ng-click="filterClick($index)">[{{$index+1}}]{{filter.name}} : {{query}}</li>
                             <li>
                                 <ul>
-                                    <li ng-repeat="result in filter.results">{{result.Name}}
-                <span>{{result.Description}}</span>
+                                    <li ng-repeat="match in filter.matchs" ng-mouseover="matchMouseOver($parent.$index,$index)" ng-click="matchClick($parent.$index,$index)">[{{$parent.$index+1}}][{{$index+1}}]{{match.Name}} <em>{{match.Description}}</em>
                                     </li>
                                 </ul>
                             </li>
@@ -30,15 +58,15 @@
                     </div>
                 </td>
                 <td>
-                <h4>This Is List</h4>
+                    <h4>This Is Search result List</h4>
                     <div>
                         <ul>
-                            <li ng-repeat="sresult in sresults |filter:query">{{sresult.Code}}
-                        <span>{{sresult.DocDate}}</span>
-                                <span>{{sresult.CreateDate}}</span>
-                                <span>{{sresult.CreateBy}}</span>
-                                <span>{{sresult.master1}}</span>
-                                <span>{{sresult.master2}}</span>
+                            <li ng-repeat="searchresult in searchresults |filter:query">{{searchresult.Code}}
+                        <span>{{searchresult.DocDate}}</span>
+                                <span>{{searchresult.CreateDate}}</span>
+                                <span>{{searchresult.CreateBy}}</span>
+                                <span>{{searchresult.master1}}</span>
+                                <span>{{searchresult.master2}}</span>
                             </li>
                         </ul>
                     </div>
@@ -47,4 +75,5 @@
         </table>
 
     </div>
+
 </div>

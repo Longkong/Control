@@ -12,5 +12,10 @@ namespace LK.Control.Controllers
         {
             return View();
         }
+
+        public ActionResult UIBootstrapTypeAhead()
+        {
+            return View();
+        }
     }
 }
