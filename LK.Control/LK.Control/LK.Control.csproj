@@ -620,6 +620,7 @@
     <Content Include="Scripts\knockout-2.2.1.debug.js" />
     <Content Include="Scripts\knockout-2.2.1.js" />
     <Content Include="Scripts\lk\Controller\SearchUICtrl.js" />
+    <Content Include="Scripts\lk\directives\angular-lk.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
@@ -677,6 +678,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\lk\test\e2e\" />
     <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>
