@@ -156,6 +156,7 @@ angular.module("ui.bootstrap.alert", []).directive('alert', function () {
     }
   };
 });
+
 angular.module('ui.bootstrap.buttons', [])
 
   .constant('buttonConfig', {
@@ -1507,7 +1508,7 @@ angular.module('ui.bootstrap.typeahead', [])
   return {
     parse:function (input) {
 
-      var match = input.match(TYPEAHEAD_REGEXP), modelMapper, viewMapper, source;
+        var match = input.match(TYPEAHEAD_REGEXP), modelMapper, viewMapper, source;
       if (!match) {
         throw new Error(
           "Expected typeahead specification in form of '_modelValue_ (as _label_)? for _item_ in _collection_'" +
@@ -1540,8 +1541,8 @@ angular.module('ui.bootstrap.typeahead', [])
 
       //expressions used by typeahead
       var parserResult = typeaheadParser.parse(attrs.typeahead);
-
-      //create a child scope for the typeahead directive so we are not polluting original scope
+      console.log(parserResult);
+        //create a child scope for the typeahead directive so we are not polluting original scope
       //with typeahead-specific data (matches, query etc.)
       var scope = originalScope.$new();
       originalScope.$on('$destroy', function(){
@@ -1676,7 +1677,6 @@ angular.module('ui.bootstrap.typeahead', [])
         };
 
         scope.isActive = function (matchIdx) {
-            console.log('isActive');
             return scope.active == matchIdx;
         };
 

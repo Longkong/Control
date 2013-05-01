@@ -1,51 +1,23 @@
 ﻿@{
     ViewBag.Title = "Directive";
 }
-<style>
-    .zippy {
-        border: 1px solid black;
-        display: inline-block;
-        width: 250px;
-    }
 
-        .zippy.opened > .title:before {
-            content: '▼ ';
-        }
-
-        .zippy.opened > .body {
-            display: block;
-        }
-
-        .zippy.closed > .title:before {
-            content: '► ';
-        }
-
-        .zippy.closed > .body {
-            display: none;
-        }
-
-        .zippy > .title {
-            background-color: black;
-            color: white;
-            padding: .1em .3em;
-            cursor: pointer;
-        }
-
-        .zippy > .body {
-            padding: .1em .3em;
-        }
-</style>
-<h2>Directive</h2>
-<div ng-app="zippyModule">
-    <div ng-controller="Ctrl3">
-        Title:
-        <input ng-model="title">
-        <br>
-        Text:
-        <textarea ng-model="text"></textarea>
-        <hr>
-        <div class="zippy" zippy-title="Details: {{title}}...">{{text}}</div>
+<h2>Search Tokenfilter Directive</h2>
+@Html.ActionLink("controller", "index")
+<div ng-app="searchToken">
+    <div ng-controller="SearchTokenFilterCtrl">
+        <div class="searchtoken" lk-tokenfilters="Details:searchmodel"></div>
+        <ul>
+            <li ng-repeat="searchresult in searchresults |filter:query">{{searchresult.Code}}
+                        <span>{{searchresult.DocDate}}</span>
+                <span>{{searchresult.CreateDate}}</span>
+                <span>{{searchresult.CreateBy}}</span>
+                <span>{{searchresult.master1}}</span>
+                <span>{{searchresult.master2}}</span>
+            </li>
+        </ul>
     </div>
 </div>
 <script src="~/Scripts/angular.js"></script>
 <script src="~/Scripts/lk/directives/angular-lk.js"></script>
+<script src="~/Scripts/lk/Controller/direcCtrl.js"></script>
