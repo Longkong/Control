@@ -18,7 +18,7 @@ angular.module('demoApp', ['ui'], function ($locationProvider) {
 
 
 // Search Controller
-function SearchUICtrl($scope, $http) {
+function SearchUICtrl($scope, $http,$compile) {
     $scope.status = "";
     $scope.query = "";
     $scope.showdropdown = false;
@@ -140,6 +140,19 @@ function SearchUICtrl($scope, $http) {
     }
 
 
+
+    $scope.renderPartial = function () {
+        $http({ method: 'GET', url: "search/part" })
+                            .success(function (data) {
+                                console.log(data);
+                                var a = angular.element("#part");
+                                console.log(a);
+                                var c = $compile(data)($scope);
+                                a.append(c);
+                                filter.status = status;
+                            });
+
+    }
 }
 
 

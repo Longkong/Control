@@ -11,6 +11,7 @@
     <script src="~/Scripts/lk/Controller/SearchUICtrl.js"></script>
 }
 <h3>To DO</h3>
+
 <ul>
     <li>ทำให้ highlight ใน match</li>
     <li>ทำเป็น dicrective</li>
@@ -24,6 +25,7 @@
         <table>
             <tr>
                 <td>
+                <p id="part" ng-click="renderPartial()">click</p>
                     <div>
                         Search:<input ng-model="query" ng-change="doquery()" ui-event="{ blur : 'blurCallback()' }" />
                         <button ng-click="dosearch()">Search</button>

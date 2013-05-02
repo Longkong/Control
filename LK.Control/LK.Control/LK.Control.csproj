@@ -643,6 +643,7 @@
     <Content Include="Scripts\ui-bootstrap-tpls-0.2.0.min.js" />
     <Content Include="Views\Home\UIBootstrapTypeAhead.cshtml" />
     <Content Include="Views\Search\Directive.cshtml" />
+    <Content Include="Views\Search\part.cshtml" />
     <TypeScriptCompile Include="TypeScripts\test.ts" />
     <Content Include="TypeScripts\test.js">
       <DependentUpon>test.ts</DependentUpon>
