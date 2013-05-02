@@ -144,12 +144,7 @@ function SearchUICtrl($scope, $http,$compile) {
     $scope.renderPartial = function () {
         $http({ method: 'GET', url: "search/part" })
                             .success(function (data) {
-                                console.log(data);
-                                var a = angular.element("#part");
-                                console.log(a);
-                                var c = $compile(data)($scope);
-                                a.append(c);
-                                filter.status = status;
+                                angular.element("#part").append($compile(data)($scope));
                             });
 
     }
