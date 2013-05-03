@@ -104,6 +104,14 @@ li {
   padding-bottom: 3px;
 }
 /* line 91, ../sass/style.scss */
-#searchdropdown li:hover, #searchdropdown li .active {
+/*#searchdropdown li:hover, #searchdropdown ul li .active {
+  background: #eee;
+}*/
+
+#searchdropdown li .active {
+  background: #eee;
+}
+
+#searchdropdown ul .active {
   background: #eee;
 }
