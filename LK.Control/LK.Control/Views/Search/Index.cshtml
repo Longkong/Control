@@ -11,6 +11,7 @@
     <script src="~/Scripts/lk/Controller/SearchUICtrl.js"></script>
 }
 <h3>To DO</h3>
+
 <ul>
     <li>ทำให้ highlight ใน match</li>
     <li>ทำเป็น dicrective</li>
@@ -19,11 +20,12 @@
 </ul>
 <div ng-app="demoApp">
 <h2>This is version Controller</h2>
-<p>have version  @Html.ActionLink("directive","Dicrective")</p>
+<p>have version  @Html.ActionLink("directive","Directive")</p>
     <div ng-controller="SearchUICtrl">
         <table>
             <tr>
                 <td>
+                <p id="part" ng-click="renderPartial()">click</p>
                     <div>
                         Search:<input ng-model="query" ng-change="doquery()" ui-event="{ blur : 'blurCallback()' }" />
                         <button ng-click="dosearch()">Search</button>

@@ -619,7 +619,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.1.debug.js" />
     <Content Include="Scripts\knockout-2.2.1.js" />
+    <Content Include="Scripts\lk\Controller\direcCtrl.js" />
     <Content Include="Scripts\lk\Controller\SearchUICtrl.js" />
+    <Content Include="Scripts\lk\directives\angular-lk.js" />
+    <Content Include="Scripts\lk\test\e2e\test-e2e-angular-lk.js" />
+    <Content Include="Scripts\lk\test\jasmine\firstItest.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
@@ -639,6 +643,7 @@
     <Content Include="Scripts\ui-bootstrap-tpls-0.2.0.min.js" />
     <Content Include="Views\Home\UIBootstrapTypeAhead.cshtml" />
     <Content Include="Views\Search\Directive.cshtml" />
+    <Content Include="Views\Search\part.cshtml" />
     <TypeScriptCompile Include="TypeScripts\test.ts" />
     <Content Include="TypeScripts\test.js">
       <DependentUpon>test.ts</DependentUpon>

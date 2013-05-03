@@ -45,5 +45,10 @@ namespace LK.Control.Controllers
             return response;
         }
 
+        public ActionResult part()
+        {
+            return PartialView("part");
+        }
+
     }
 }
