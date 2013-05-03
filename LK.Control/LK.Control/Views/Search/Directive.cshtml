@@ -4,14 +4,16 @@
 
 <link href="~/Content/style/css/style.css" rel="stylesheet" />
 
+<div id="wrap">
 <h2>Search Tokenfilter Directive</h2>
 @Html.ActionLink("controller", "index")
+
 <div ng-app="searchToken">
     <div ng-controller="SearchTokenFilterCtrl">
         <div class="searchtoken" lk-tokenfilters="Details:searchmodel"></div>
-        <ul>
+        <ul class="result">
             <li ng-repeat="searchresult in searchresults |filter:query">{{searchresult.Code}}
-                        <span>{{searchresult.DocDate}}</span>
+                <span>{{searchresult.DocDate}}</span>
                 <span>{{searchresult.CreateDate}}</span>
                 <span>{{searchresult.CreateBy}}</span>
                 <span>{{searchresult.master1}}</span>
@@ -20,9 +22,10 @@
         </ul>
     </div>
 </div>
+</div> @*end div ใหญ่*@
+
 <script src="~/Scripts/angular.js"></script>
 <script src="~/Scripts/lk/directives/angular-lk.js"></script>
 <script src="~/Scripts/lk/Controller/direcCtrl.js"></script>
 
-<ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="z-index: 1004; display: none; top: 94px; left: 1050px; width: 400px;"><li class="ui-menu-item" role="presentation"><a id="ui-id-97" class="ui-corner-all" tabindex="-1">Search <em>Opportunity</em> for: <strong>q</strong></a></li><li class="ui-menu-item" role="presentation"><a id="ui-id-98" class="ui-corner-all" tabindex="-1">Search <em>Category</em> for: <strong>q</strong></a></li></ul>
 

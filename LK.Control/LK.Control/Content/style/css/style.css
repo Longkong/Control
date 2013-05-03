@@ -2,37 +2,108 @@
 CONTROL
 ******************************************************************/
 /*==========  IMPORTING  ==========*/
-/* line 10, ../sass/style.scss */
+/* line 11, ../sass/style.scss */
 * {
   margin: 0px;
   padding: 0px;
 }
 
-/* line 15, ../sass/style.scss */
+/* line 16, ../sass/style.scss */
 .searchtoken > ul > li {
   float: left;
+  color: white;
 }
-/* line 18, ../sass/style.scss */
+/* line 19, ../sass/style.scss */
 .searchtoken > ul > li > ul {
   float: left;
   margin-right: 10px;
 }
-/* line 22, ../sass/style.scss */
+/* line 23, ../sass/style.scss */
 .searchtoken > ul > li > ul > li {
   float: left;
-  background: MistyRose;
+  background: #09b3b3;
   padding: 2px 5px;
 }
-/* line 27, ../sass/style.scss */
+/* line 28, ../sass/style.scss */
 .searchtoken > ul > li > ul > li:first-child {
-  background: LightYellow;
+  background: #067475;
 }
-/* line 31, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 .searchtoken > ul > li > ul > li:last-child {
   background: red;
 }
+/* line 35, ../sass/style.scss */
+.searchtoken > ul > li > ul > li li {
+  float: left;
+  border-left: 1px solid #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
-/* line 40, ../sass/style.scss */
+/* line 47, ../sass/style.scss */
 li {
   list-style-type: none;
+}
+
+/* line 51, ../sass/style.scss */
+#wrap {
+  width: 80%;
+  margin: 0 auto;
+  background: white;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+/* line 59, ../sass/style.scss */
+.searchtoken {
+  border: 1px #eee solid;
+  *zoom: 1;
+}
+/* line 22, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.4/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.searchtoken:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+/* line 62, ../sass/style.scss */
+.searchtoken #token {
+  border: 0;
+}
+
+/* line 67, ../sass/style.scss */
+.result {
+  margin-top: 30px;
+  width: 600px;
+}
+/* line 70, ../sass/style.scss */
+.result li {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+/* line 77, ../sass/style.scss */
+#buttonsearch {
+  float: right;
+}
+
+/* line 81, ../sass/style.scss */
+#searchdropdown {
+  border: 2px solid #067475;
+  padding: 10px;
+  position: absolute;
+  width: 400px;
+  right: 0;
+  background: #fff;
+}
+/* line 89, ../sass/style.scss */
+#searchdropdown li {
+  padding-bottom: 3px;
+}
+/* line 91, ../sass/style.scss */
+#searchdropdown li:hover, #searchdropdown li .active {
+  background: #eee;
 }
