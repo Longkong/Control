@@ -1,0 +1,38 @@
+/******************************************************************
+CONTROL
+******************************************************************/
+/*==========  IMPORTING  ==========*/
+/* line 10, ../sass/style.scss */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 15, ../sass/style.scss */
+.searchtoken > ul > li {
+  float: left;
+}
+/* line 18, ../sass/style.scss */
+.searchtoken > ul > li > ul {
+  float: left;
+  margin-right: 10px;
+}
+/* line 22, ../sass/style.scss */
+.searchtoken > ul > li > ul > li {
+  float: left;
+  background: MistyRose;
+  padding: 2px 5px;
+}
+/* line 27, ../sass/style.scss */
+.searchtoken > ul > li > ul > li:first-child {
+  background: LightYellow;
+}
+/* line 31, ../sass/style.scss */
+.searchtoken > ul > li > ul > li:last-child {
+  background: red;
+}
+
+/* line 40, ../sass/style.scss */
+li {
+  list-style-type: none;
+}

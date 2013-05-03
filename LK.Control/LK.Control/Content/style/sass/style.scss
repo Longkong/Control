@@ -1,0 +1,44 @@
+
+/******************************************************************
+CONTROL
+******************************************************************/
+ 
+/*==========  IMPORTING  ==========*/
+  
+@import "compass";
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.searchtoken >ul>li{
+	float: left;
+	
+	&>ul{
+		float: left;
+		margin-right: 10px;
+
+		&>li{
+			float: left;
+			background: MistyRose;
+			padding: 2px 5px;
+
+				&:first-child{
+					background: LightYellow;
+				}
+
+				&:last-child{
+					background: red;
+				}
+		}
+		
+	}
+
+}
+
+li{
+	list-style-type: none;
+
+} 
+
