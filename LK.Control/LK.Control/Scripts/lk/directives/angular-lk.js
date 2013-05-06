@@ -130,7 +130,6 @@ angular.module('lk.search.tokenFilters', [])
                   scope.matchactive = -1;
                   scope.filteractive = -1;
                   scope.showdropdown = false;
-                  elm.focus();
               };
               resetActive();
 
@@ -154,6 +153,7 @@ angular.module('lk.search.tokenFilters', [])
                   scope.filteractive = activeIdx;
                   scope.showdropdown = false;
                   resetActive();
+                  elm.focus();
               }
               scope.selectmatch = function (parentIdx, activeIdx) {
                   var q = scope.filters[parentIdx].matchs[activeIdx].Name;
@@ -163,10 +163,13 @@ angular.module('lk.search.tokenFilters', [])
                   scope.filteractive = parentIdx;
                   scope.showdropdown = false;
                   resetActive();
+                  elm.focus();
               }
 
 
-
+              elm.bind('blur', function (evt) {
+                  resetActive();
+              });
 
               //bind keyboard events: arrows up(38) / down(40), enter(13) and tab(9), esc(27)
               elm.bind('keydown', function (evt) {
@@ -231,6 +234,16 @@ angular.module('lk.search.typeandmore', [])
         require: 'ngModel',
         link: function (scope, element) {
 
+            var tpldropdownCompile = $compile('<div id="searchdropdown" ng-show="showdropdown">'
+                            + '<ul ng-repeat="filter in filters">'
+                                + '<span  ng-class="{active: isActive($index,-1)}" ng-mouseover="selectfilterActive($index)"  ng-click="selectfilter($index)" >{{filter.name}}</span>'
+                                 + '<li ng-repeat="match in filter.matchs" ng-class="{active: isActive($parent.$index,$index) }" ng-mouseover="selectmatchActive($parent.$index,$index)" ng-click="selectmatch($parent.$index,$index)" >'
+                                 + '<span>{{match.Name}} <em>{{match.Description}}</em></span>'
+                                 + '</li>'
+                            + '</ul>'
+                             +'<p ng-click="doSearchMore()">Search More..</p>'
+                        + '</div>')(scope);
+            element.after(tpldropdownCompile);
 
             //Dropdown search
             scope.doquerymore = function () {
@@ -309,6 +322,10 @@ angular.module('lk.search.typeandmore', [])
                 scope.showdropdown = false;
                 resetActive();
             }
+
+            element.bind('blur', function (evt) {
+                resetActive();
+            });
 
             //bind keyboard events: arrows up(38) / down(40), enter(13) and tab(9), esc(27)
             element.bind('keydown', function (evt) {
