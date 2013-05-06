@@ -5,29 +5,30 @@
 <link href="~/Content/style/css/style.css" rel="stylesheet" />
 
 <div id="wrap">
-<h2>Search Tokenfilter Directive</h2>
-@Html.ActionLink("controller", "index")
+    <h2>Search Tokenfilter Directive</h2>
+    @Html.ActionLink("controller", "index")
 
-<div ng-app="searchToken">
-    <div ng-controller="SearchTokenFilterCtrl">
-        <div class="searchtoken" lk-tokenfilters="Details:searchmodel"></div>
-        <ul class="result">
-            <li ng-repeat="searchresult in searchresults |filter:query">{{searchresult.Code}}
+    <div ng-app="searchToken">
+        <div ng-controller="SearchTokenFilterCtrl">
+            <div class="searchtoken" lk-tokenfilters="Details:searchmodel"></div>
+            <ul class="result">
+                <li ng-repeat="searchresult in searchresults |filter:query">{{searchresult.Code}}
                 <span>{{searchresult.DocDate}}</span>
-                <span>{{searchresult.CreateDate}}</span>
-                <span>{{searchresult.CreateBy}}</span>
-                <span>{{searchresult.master1}}</span>
-                <span>{{searchresult.master2}}</span>
-            </li>
-        </ul>
+                    <span>{{searchresult.CreateDate}}</span>
+                    <span>{{searchresult.CreateBy}}</span>
+                    <span>{{searchresult.master1}}</span>
+                    <span>{{searchresult.master2}}</span>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
-</div> @*end div ใหญ่*@
+@*end div ใหญ่*@
 
 
 @section scripts{
-<script src="~/Scripts/angular.js"></script>
-<script src="~/Scripts/lk/directives/angular-lk.js"></script>
-<script src="~/Scripts/lk/Controller/direcCtrl.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/lk/directives/angular-lk.js"></script>
+    <script src="~/Scripts/lk/Controller/direcCtrl.js"></script>
 }
 

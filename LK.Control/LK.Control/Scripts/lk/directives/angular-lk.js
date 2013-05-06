@@ -2,7 +2,7 @@
 
 
 angular.module('lk.search.config', []).value('lk.search.config', {});
-angular.module('lk.search', ["lk.search.tokenFilters", 'lk.search.config']);
+angular.module('lk.search', ["lk.search.tokenFilters", 'lk.search.typeandmore', 'lk.search.config']);
 
 angular.module('lk.search.tokenFilters', [])
 
@@ -44,8 +44,6 @@ angular.module('lk.search.tokenFilters', [])
               //Dropdown search
               scope.doquery = function () {
                   if (scope.query) {
-                      scope.mapIndexes = [];
-                      scope.maxIndex = 0;
                       angular.forEach(scope.filters, function (filter) {
                           if (filter.uri) {
                               $http({ method: 'GET', url: filter.uri, params: { query: scope.query } })
@@ -53,7 +51,7 @@ angular.module('lk.search.tokenFilters', [])
                                       filter.matchs = data;
                                       filter.status = status;
                                   });
-                          } 
+                          }
                       });
                       setActive()
                   } else {
@@ -61,8 +59,8 @@ angular.module('lk.search.tokenFilters', [])
                   }
               }
 
-              
-             
+
+
 
               //Real Search
               scope.dosearch = function () {
@@ -117,7 +115,7 @@ angular.module('lk.search.tokenFilters', [])
                   scope.tokens = scope.tokens.slice(0, tokenIdx).concat(scope.tokens.slice(tokenIdx + 1));
               }
 
-              
+
 
               // manage dropdown
               //mouse event on dropdown
@@ -135,14 +133,9 @@ angular.module('lk.search.tokenFilters', [])
                   elm.focus();
               };
               resetActive();
-              var c = 0;
-              scope.isActive = function (filterIdx, matchIdx) {
-                  if (scope.filteractive == filterIdx) {
-                      if (scope.matchactive == matchIdx) {
-                      console.log("active"+filterIdx.toString()+matchIdx.toString())
-                      }
-                  }
 
+
+              scope.isActive = function (filterIdx, matchIdx) {
                   return scope.filteractive == filterIdx && scope.matchactive == matchIdx;
               };
 
@@ -172,9 +165,9 @@ angular.module('lk.search.tokenFilters', [])
                   resetActive();
               }
 
-             
 
-              
+
+
               //bind keyboard events: arrows up(38) / down(40), enter(13) and tab(9), esc(27)
               elm.bind('keydown', function (evt) {
 
@@ -189,13 +182,13 @@ angular.module('lk.search.tokenFilters', [])
                   var maxfa = scope.filters.length;
                   if (evt.which === 40) {
                       if (scope.filters[fa]) {
-                          if (scope.filters[fa].matchs && scope.filters[fa].matchs.length-1 > ma) {
+                          if (scope.filters[fa].matchs && scope.filters[fa].matchs.length - 1 > ma) {
                               scope.matchactive = ma + 1;
                           } else {
                               scope.filteractive = (fa + 1) % maxfa;
                               scope.matchactive = -1;
                           }
-                      } 
+                      }
                       scope.$digest();
 
                   } else if (evt.which === 38) {
@@ -204,8 +197,8 @@ angular.module('lk.search.tokenFilters', [])
                               scope.matchactive = ma - 1;
                           } else {
                               var iff = (fa - 1) > -1;
-                              scope.filteractive = (iff ? fa: maxfa)-1;
-                              scope.matchactive = (scope.filters[scope.filteractive].matchs?scope.filters[scope.filteractive].matchs.length:0) - 1;
+                              scope.filteractive = (iff ? fa : maxfa) - 1;
+                              scope.matchactive = (scope.filters[scope.filteractive].matchs ? scope.filters[scope.filteractive].matchs.length : 0) - 1;
                           }
                       }
                       scope.$digest();
@@ -229,3 +222,146 @@ angular.module('lk.search.tokenFilters', [])
           }
       };
   });
+
+angular.module('lk.search.typeandmore', [])
+
+.directive('lkTypeandmore', function ($compile, $http) {
+    var HOT_KEYS = [9, 13, 27, 38, 40];
+    return {
+        require: 'ngModel',
+        link: function (scope, element) {
+
+
+            //Dropdown search
+            scope.doquerymore = function () {
+                if (scope.query) {
+                    angular.forEach(scope.filters, function (filter) {
+                        if (filter.uri) {
+                            $http({ method: 'GET', url: filter.uri, params: { query: scope.query } })
+                                .success(function (data, status) {
+                                    filter.matchs = data;
+                                    filter.status = status;
+                                });
+                        }
+                    });
+                    setActive()
+                } else {
+                    resetActive();
+                }
+            }
+
+            //Dropdown search
+            scope.doSearchMore = function () {
+                if (scope.typeandmoremodel.moreuri) {
+                    $http({ method: 'GET', url: scope.typeandmoremodel.moreuri, params: { filters: scope.filters } })
+                        .success(function (data, status) {
+                            filter.matchs = data;
+                            filter.status = status;
+                        });
+                }
+                resetActive();
+            }
+
+            // manage dropdown
+            //mouse event on dropdown
+
+            function setActive() {
+                scope.filteractive = 0;
+                scope.showdropdown = true;
+            }
+
+            var resetActive = function () {
+                scope.matchactive = -1;
+                scope.filteractive = -1;
+                scope.showdropdown = false;
+            };
+            resetActive();
+
+
+            scope.isActive = function (filterIdx, matchIdx) {
+                return scope.filteractive == filterIdx && scope.matchactive == matchIdx;
+            };
+
+            scope.selectfilterActive = function (filterIdx) {
+                scope.matchactive = -1;
+                scope.filteractive = filterIdx;
+            }
+
+            scope.selectmatchActive = function (filterIdx, matchIdx) {
+                scope.matchactive = matchIdx;
+                scope.filteractive = filterIdx;
+            }
+
+            scope.selectfilter = function (activeIdx) {
+                var fil = scope.filters[parentIdx];
+                if (angular.isFunction(scope.onSelectfilter)) {
+                    scope.onSelectfilter(fil);
+                }
+                scope.showdropdown = false;
+                resetActive();
+            }
+
+            scope.selectmatch = function (parentIdx, activeIdx) {
+                var match = scope.filters[parentIdx].matchs[activeIdx];
+                if (angular.isFunction(scope.onSelectmatch)) {
+                    scope.onSelectmatch(match);
+                } 
+                scope.showdropdown = false;
+                resetActive();
+            }
+
+            //bind keyboard events: arrows up(38) / down(40), enter(13) and tab(9), esc(27)
+            element.bind('keydown', function (evt) {
+
+                //typeahead is open and an "interesting" key was pressed
+                if (scope.filters.length === 0 || HOT_KEYS.indexOf(evt.which) === -1) {
+                    return;
+                }
+
+                evt.preventDefault();
+                var fa = scope.filteractive;
+                var ma = scope.matchactive;
+                var maxfa = scope.filters.length;
+                if (evt.which === 40) {
+                    if (scope.filters[fa]) {
+                        if (scope.filters[fa].matchs && scope.filters[fa].matchs.length - 1 > ma) {
+                            scope.matchactive = ma + 1;
+                        } else {
+                            scope.filteractive = (fa + 1) % maxfa;
+                            scope.matchactive = -1;
+                        }
+                    }
+                    scope.$digest();
+
+                } else if (evt.which === 38) {
+                    if (scope.filters[fa]) {
+                        if (scope.filters[fa].matchs && -1 < ma) {
+                            scope.matchactive = ma - 1;
+                        } else {
+                            var iff = (fa - 1) > -1;
+                            scope.filteractive = (iff ? fa : maxfa) - 1;
+                            scope.matchactive = (scope.filters[scope.filteractive].matchs ? scope.filters[scope.filteractive].matchs.length : 0) - 1;
+                        }
+                    }
+                    scope.$digest();
+
+                } else if (evt.which === 13 || evt.which === 9) {
+                    if (scope.matchactive == -1) {
+                        scope.$apply(function () {
+                            scope.selectfilter(scope.filteractive);
+                        });
+                    } else {
+                        scope.$apply(function () {
+                            scope.selectmatch(scope.filteractive, scope.matchactive);
+                        });
+                    }
+                    resetActive();
+                } else if (evt.which === 27) {
+                    resetActive();
+                    scope.$digest();
+                }
+            });
+
+        }
+    }
+});
