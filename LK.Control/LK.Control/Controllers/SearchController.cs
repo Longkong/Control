@@ -82,5 +82,10 @@ namespace LK.Control.Controllers
         {
             return View();
         }
+
+        public ActionResult Infinitescholl()
+        {
+            return View();
+        }
     }
 }

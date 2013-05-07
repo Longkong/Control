@@ -73,6 +73,17 @@ namespace LK.Control.Controllers
             return trans.FirstOrDefault(t => t.Id == id);
         }
 
+        public IEnumerable<DemoTransaction> Get(int skip, int take)
+        {
+            var filename = "DemoSearchTransaction1000.txt";
+            var jsonData = File.ReadAllText(Path.Combine(PathService.Model(), filename));
+
+            var trans = JsonConvert.DeserializeObject<List<DemoTransaction>>(jsonData);
+            trans = trans.Skip(skip).Take(take).ToList();
+
+            return trans;
+        }
+
         // POST api/demotransaction
         public void Post([FromBody]string value)
         {

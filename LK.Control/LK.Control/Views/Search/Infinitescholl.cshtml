@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Infinitescholl";
+}
+
+@section scripts{
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/ng-infinite-scroll.js"></script>
+    <script src="~/Scripts/lk/Controller/testInfiniteScroll.js"></script>
+}
+<h2>Infinitescholl</h2>
+<div ng-app="myApp">
+    <div ng-controller="testinfinitescrollCtrl">
+        <div infinite-scroll="addMore()">
+            <ul class="result">
+                <li ng-repeat="searchresult in searchresults">{{searchresult.Id}}
+                <span>{{searchresult.DocDate}}</span>
+                    <span>{{searchresult.CreateDate}}</span>
+                    <span>{{searchresult.CreateBy}}</span>
+                    <span>{{searchresult.master1}}</span>
+                    <span>{{searchresult.master2}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

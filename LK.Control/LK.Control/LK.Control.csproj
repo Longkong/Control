@@ -272,6 +272,7 @@
     <Content Include="Models\DemoSearchMaster1.txt" />
     <Content Include="Models\DemoSearchTransaction.txt" />
     <Content Include="Models\DemoSearchMaster2.txt" />
+    <Content Include="Models\DemoSearchTransaction1000.txt" />
     <Content Include="Models\DemoSerachMaster3.txt" />
     <Content Include="Scripts\angular-bootstrap-prettify.js" />
     <Content Include="Scripts\angular-bootstrap-prettify.min.js" />
@@ -624,12 +625,15 @@
     <Content Include="Scripts\knockout-2.2.1.js" />
     <Content Include="Scripts\lk\Controller\direcCtrl.js" />
     <Content Include="Scripts\lk\Controller\SearchUICtrl.js" />
+    <Content Include="Scripts\lk\Controller\testInfiniteScroll.js" />
     <Content Include="Scripts\lk\Controller\TypeAndMoreCtrl.js" />
     <Content Include="Scripts\lk\directives\angular-lk.js" />
     <Content Include="Scripts\lk\directives\lk-typeandmore.js" />
     <Content Include="Scripts\lk\test\e2e\test-e2e-angular-lk.js" />
     <Content Include="Scripts\lk\test\jasmine\firstItest.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ng-infinite-scroll.js" />
+    <Content Include="Scripts\ng-infinite-scroll.min.js" />
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
@@ -651,6 +655,7 @@
     <Content Include="Views\Search\part.cshtml" />
     <Content Include="Views\Search\SearchAndMore.cshtml" />
     <Content Include="Views\Search\SearchMore.cshtml" />
+    <Content Include="Views\Search\Infinitescholl.cshtml" />
     <TypeScriptCompile Include="TypeScripts\test.ts" />
     <Content Include="TypeScripts\test.js">
       <DependentUpon>test.ts</DependentUpon>
