@@ -10,7 +10,7 @@
 <h2>Infinitescholl</h2>
 <div ng-app="myApp">
     <div ng-controller="testinfinitescrollCtrl">
-        <div infinite-scroll="addMore()">
+        <div infinite-scroll="addMore(false)">
             <ul class="result">
                 <li ng-repeat="searchresult in searchresults">{{searchresult.Id}}
                 <span>{{searchresult.DocDate}}</span>

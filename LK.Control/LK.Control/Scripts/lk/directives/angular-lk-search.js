@@ -64,11 +64,15 @@ angular.module('lk.search.tokenFilters', [])
 
               //Real Search
               scope.dosearch = function () {
-                  $http({ method: 'GET', url: scope.searchmodel.uri, params: { req: scope.tokens } })
-                      .success(function (data, status) {
-                          scope.searchresults = data;
-                          scope.status = status;
-                      });
+                  if (angular.isFunction(scope.clickSearch)) {
+                      scope.clickSearch();
+                  } else {
+                      $http({ method: 'GET', url: scope.searchmodel.uri, params: { req: scope.tokens } })
+                          .success(function (data, status) {
+                              scope.searchresults = data;
+                              scope.status = status;
+                          });
+                  }
                   resetActive();
               }
 

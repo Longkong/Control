@@ -7,7 +7,6 @@ myApp.controller('testinfinitescrollCtrl', function ($scope, $http) {
     $scope.searchresults = [];
 
     $scope.addMore = function () {
-        console.log($scope.busy);
 
         if ($scope.busy) return;
         $scope.busy = true;
