@@ -54,7 +54,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.5.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -640,10 +640,10 @@
     <Content Include="Scripts\typings\jqueryui\jqueryui.d.ts" />
     <Content Include="Scripts\typings\jquery\jquery.d.ts" />
     <Content Include="Scripts\typings\select2\select2.d.ts" />
-    <Content Include="Scripts\ui-bootstrap-0.2.0.js" />
-    <Content Include="Scripts\ui-bootstrap-0.2.0.min.js" />
-    <Content Include="Scripts\ui-bootstrap-tpls-0.2.0.js" />
-    <Content Include="Scripts\ui-bootstrap-tpls-0.2.0.min.js" />
+    <Content Include="Scripts\ui-bootstrap-0.3.0.js" />
+    <Content Include="Scripts\ui-bootstrap-0.3.0.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.3.0.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.3.0.min.js" />
     <Content Include="Views\Home\UIBootstrapTypeAhead.cshtml" />
     <Content Include="Views\Search\Directive.cshtml" />
     <Content Include="Views\Search\part.cshtml" />
