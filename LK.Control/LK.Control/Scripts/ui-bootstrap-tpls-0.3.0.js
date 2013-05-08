@@ -1611,6 +1611,7 @@ angular.module('ui.bootstrap.progressbar', ['ui.bootstrap.transition'])
         }
     };
 }]);
+
 angular.module('ui.bootstrap.rating', [])
 
 .constant('ratingConfig', {

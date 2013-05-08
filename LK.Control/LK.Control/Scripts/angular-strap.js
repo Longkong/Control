@@ -491,6 +491,7 @@ angular.module('$strap.directives').factory('$modal', [
     };
   }
 ]);
+
 angular.module('$strap.directives').directive('bsNavbar', [
   '$location',
   function ($location) {

@@ -18,15 +18,15 @@ angular.module('lk.search.tokenFilters', [])
                            + '<li><ul><li ng-repeat="tquery in token.queries">{{tquery}}</li></ul></li>'
                            + '<li ng-click="removetoken($index)">x</li>'
                            + '</ul></li>'
-                           + '<li><input id="inputbox" ng-model="query" ng-change=doquery() /></li>'
+                           + '<li><input id="inputbox" ng-model="query" ng-change=doquery() placeholder="{{placeholder}}" /></li>'
                        + '</ul>')(scope);
               var tplbuttonCompile = $compile('<button id="buttonsearch" ng-click="dosearch()" >Search</button>')(scope);
               var tpldropdownCompile = $compile('<div id="searchdropdown" ng-show="showdropdown">'
                         + '<ul ng-repeat="filter in filters">'
-                            + '<span  ng-class="{active: isActive($index,-1)}" ng-mouseover="selectfilterActive($index)"  ng-click="selectfilter($index)" >[{{$index+1}}]{{filter.name}} : {{query}}</span>'
+                            + '<span  ng-class="{active: isActive($index,-1)}" ng-mouseover="selectfilterActive($index)"  ng-click="selectfilter($index)" >{{filter.name}} : {{query}}</span>'
                            + '<li><ul>'
                              + '<li ng-repeat="match in filter.matchs" ng-class="{active: isActive($parent.$index,$index) }" ng-mouseover="selectmatchActive($parent.$index,$index)" ng-click="selectmatch($parent.$index,$index)" >'
-                             + '<span>[{{$parent.$index+1}}][{{$index+1}}]{{match.Name}} <em>{{match.Description}}</em></span>'
+                             + '<span>{{match.Name}} <em>{{match.Description}}</em></span>'
                              + '</li></ul>'
                      + '</li>'
                         + '</ul>'

@@ -627,11 +627,13 @@
     <Content Include="Scripts\lk\Controller\SearchUICtrl.js" />
     <Content Include="Scripts\lk\Controller\testInfiniteScroll.js" />
     <Content Include="Scripts\lk\Controller\TypeAndMoreCtrl.js" />
-    <Content Include="Scripts\lk\directives\angular-lk.js" />
-    <Content Include="Scripts\lk\directives\lk-typeandmore.js" />
+    <Content Include="Scripts\lk\directives\angular-lk-search.js" />
     <Content Include="Scripts\lk\test\e2e\test-e2e-angular-lk.js" />
     <Content Include="Scripts\lk\test\jasmine\firstItest.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ng-grid.debug.js" />
+    <Content Include="Scripts\ng-grid.js" />
+    <Content Include="Scripts\ng-grid.min.js" />
     <Content Include="Scripts\ng-infinite-scroll.js" />
     <Content Include="Scripts\ng-infinite-scroll.min.js" />
     <Content Include="Scripts\select2.js" />
