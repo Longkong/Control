@@ -1,0 +1,51 @@
+﻿<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>LK Control Project</h1>
+                <h2>request create test develop share our control component</h2>
+            </hgroup>
+            <p>
+                this project only control test and example  
+            </p>
+            
+        </div>
+    </section>
+
+<head>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/ui-bootstrap-tpls-0.2.0.js"></script>
+    <script src="~/Scripts/lk/Controller/TimeframeCtrl.js"></script>
+
+</head>
+
+    <div ng-app="myApp">
+        <div ng-controller="SettingsController"  >
+            <div ng-repeat="Filter in Filters">
+            <ul  >
+                <h2>Timeframe</h2>
+         
+              <li  ng-repeat="tf in Filter.timeframes" ng-click="addDate(tf,$parent.$index)" style= "background-color:gray ; font-size:medium; " >{{tf}}</li>
+             
+                   
+            </ul>
+            <hr>
+            <div collapse="Filter.isCollapsed"    ng-model="Filter.isCollapsed"  >
+      
+                <li  ng-hide="Filter.isCollapsed"   >StartDate:</li> <input type="text" id="Startdate" ng-hide="Filter.isCollapsed"  ng-model="Filter.startdate"  datepicker >
+
+                 <li  ng-hide="Filter.isCollapsed"   >EndDate:</li>   <input type="text" id="Enddate" ng-hide="Filter.isCollapsed"  ng-model="Filter.enddate"  datepicker >
+              
+            </div>
+
+
+            </div>
+     <li>[ <a href="" ng-click="addContact()">add</a> ]</li>  
+  <button>Cancel</button>     <button ng-click="done()">Done</button>  
+        </div>
+
+ 
+    </div>
+
+
+    </div>

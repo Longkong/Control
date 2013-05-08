@@ -170,6 +170,7 @@
     <Compile Include="Controllers\Master2Controller.cs" />
     <Compile Include="Controllers\PathService.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\TimeframeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -628,6 +629,7 @@
     <Content Include="Scripts\lk\Controller\testInfiniteScroll.js" />
     <Content Include="Scripts\lk\Controller\TypeAndMoreCtrl.js" />
     <Content Include="Scripts\lk\directives\angular-lk-search.js" />
+    <Content Include="Scripts\lk\directives\angular-lk.js" />
     <Content Include="Scripts\lk\test\e2e\test-e2e-angular-lk.js" />
     <Content Include="Scripts\lk\test\jasmine\firstItest.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -655,6 +657,9 @@
     <Content Include="Views\Home\UIBootstrapTypeAhead.cshtml" />
     <Content Include="Views\Search\Directive.cshtml" />
     <Content Include="Views\Search\part.cshtml" />
+    <Content Include="Views\Timeframe\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Views\Search\SearchAndMore.cshtml" />
     <Content Include="Views\Search\SearchMore.cshtml" />
     <Content Include="Views\Search\Infinitescholl.cshtml" />
@@ -729,7 +734,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+  <!--<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptTarget>ES5</TypeScriptTarget>
     <TypeScriptIncludeComments>true</TypeScriptIncludeComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
@@ -739,7 +744,7 @@
     <TypeScriptIncludeComments>false</TypeScriptIncludeComments>
     <TypeScriptSourceMap>false</TypeScriptSourceMap>
   </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" />-->
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
