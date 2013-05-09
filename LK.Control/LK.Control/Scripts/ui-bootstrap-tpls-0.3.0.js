@@ -1893,7 +1893,6 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position'])
         modelCtrl.$render();
       };
 
-      console.log(element);
         //bind keyboard events: arrows up(38) / down(40), enter(13) and tab(9), esc(27)
       element.bind('keydown', function (evt) {
 

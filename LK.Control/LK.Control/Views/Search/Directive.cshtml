@@ -10,7 +10,7 @@
 
     <div ng-app="searchToken">
         <div ng-controller="SearchTokenFilterCtrl">
-            <div class="searchtoken" lk-tokenfilters="Details:searchmodel"></div>
+            <div class="searchtoken" lk-tokenfilters="'/search/CreateSearch'"></div>
             <ul class="result">
                 <li ng-repeat="searchresult in searchresults |filter:query">{{searchresult.Code}}
                 <span>{{searchresult.DocDate}}</span>
@@ -28,7 +28,7 @@
 
 @section scripts{
     <script src="~/Scripts/angular.js"></script>
-    <script src="~/Scripts/lk/directives/angular-lk.js"></script>
+    <script src="~/Scripts/lk/directives/angular-lk-search.js"></script>
     <script src="~/Scripts/lk/Controller/direcCtrl.js"></script>
 }
 

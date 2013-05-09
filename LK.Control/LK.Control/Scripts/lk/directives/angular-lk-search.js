@@ -6,11 +6,21 @@ angular.module('lk.search', ["lk.search.tokenFilters", 'lk.search.typeandmore', 
 
 angular.module('lk.search.tokenFilters', [])
 
-  .directive('lkTokenfilters', function ($compile, $http) {
+  .directive('lkTokenfilters', function ($compile, $http, $parse) {
       var HOT_KEYS = [9, 13, 27, 38, 40];
       return {
           requrie: 'ngModel',
           link: function (scope, element, attrs, modelCtrl) {
+
+              //Create Context for search
+              //รับค่า attribute มาใช้ ส่ง link ไปสร้าง model
+              var getter = $parse(attrs.lkTokenfilters), setter = getter.assign, value = getter(scope), options = {};
+
+              $http({ method: 'GET', url: value }).success(function (data, status) {
+                  scope.searchmodel = data;
+                  scope.filters = data.filters;
+                  scope.dosearch();
+              });
 
               var tpltokenCompile = $compile('<ul>'
                            + '<li><ul ng-repeat="token in tokens">'
@@ -245,7 +255,7 @@ angular.module('lk.search.typeandmore', [])
                                  + '<span>{{match.Name}} <em>{{match.Description}}</em></span>'
                                  + '</li>'
                             + '</ul>'
-                             +'<p ng-click="doSearchMore()">Search More..</p>'
+                             + '<p ng-click="doSearchMore()">Search More..</p>'
                         + '</div>')(scope);
             element.after(tpldropdownCompile);
 
@@ -322,7 +332,7 @@ angular.module('lk.search.typeandmore', [])
                 var match = scope.filters[parentIdx].matchs[activeIdx];
                 if (angular.isFunction(scope.onSelectmatch)) {
                     scope.onSelectmatch(match);
-                } 
+                }
                 scope.showdropdown = false;
                 resetActive();
             }

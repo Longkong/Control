@@ -627,6 +627,7 @@
     <Content Include="Scripts\lk\Controller\direcCtrl.js" />
     <Content Include="Scripts\lk\Controller\SearchUICtrl.js" />
     <Content Include="Scripts\lk\Controller\testInfiniteScroll.js" />
+    <Content Include="Scripts\lk\Controller\TimeframeCtrl.js" />
     <Content Include="Scripts\lk\Controller\TypeAndMoreCtrl.js" />
     <Content Include="Scripts\lk\directives\angular-lk-search.js" />
     <Content Include="Scripts\lk\directives\angular-lk.js" />
