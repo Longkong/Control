@@ -242,11 +242,22 @@ angular.module('lk.search.tokenFilters', [])
 
 angular.module('lk.search.typeandmore', [])
 
-.directive('lkTypeandmore', function ($compile, $http) {
+.directive('lkTypeandmore', function ($compile, $http, $parse) {
     var HOT_KEYS = [9, 13, 27, 38, 40];
     return {
         require: 'ngModel',
-        link: function (scope, element) {
+        link: function (scope, element, attrs) {
+
+            //Create Context for search
+            //รับค่า attribute มาใช้ ส่ง link ไปสร้าง model
+            var getter = $parse(attrs.lkTokenfilters), setter = getter.assign, value = getter(scope), options = {};
+
+            //Create Context for search
+            $http({ method: 'GET', url: value }).success(function (data, status) {
+                $scope.typeandmoremodel = data;
+                $scope.filters = data.filters;
+            });
+
 
             var tpldropdownCompile = $compile('<div id="searchdropdown" ng-show="showdropdown">'
                             + '<ul ng-repeat="filter in filters">'
