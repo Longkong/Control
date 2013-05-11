@@ -6,7 +6,7 @@ angular.module('lk.search', ["lk.search.tokenFilters", 'lk.search.typeandmore', 
 
 angular.module('lk.search.tokenFilters', [])
 
-  .directive('lkTokenfilters', function ($compile, $http, $parse) {
+  .directive('lkTokenfilters', function ($compile, $http, $parse, $filter) {
       var HOT_KEYS = [9, 13, 27, 38, 40];
       return {
           requrie: 'ngModel',
@@ -19,19 +19,20 @@ angular.module('lk.search.tokenFilters', [])
               $http({ method: 'GET', url: value }).success(function (data, status) {
                   scope.searchmodel = data;
                   scope.filters = data.filters;
+                  scope.placeholder = "type search for " + data.name;
                   scope.dosearch();
               });
 
-              var tpltokenCompile = $compile('<ul>'
-                           + '<li><ul ng-repeat="token in tokens">'
+              var tpltokenCompile = $compile('<ul class="input-fake">'
+                           + '<li><ul ng-repeat="token in tokens" class="token-item">'
                            + '<li>{{token.name}}</li>'
                            + '<li><ul><li ng-repeat="tquery in token.queries">{{tquery}}</li></ul></li>'
                            + '<li ng-click="removetoken($index)">x</li>'
                            + '</ul></li>'
-                           + '<li><input id="inputbox" ng-model="query" ng-change=doquery() placeholder="{{placeholder}}" /></li>'
+                           + '<li><input class="tokeninput" ng-model="query" placeholder="{{placeholder}}" /></li>'
                        + '</ul>')(scope);
-              var tplbuttonCompile = $compile('<button id="buttonsearch" ng-click="dosearch()" >Search</button>')(scope);
-              var tpldropdownCompile = $compile('<div id="searchdropdown" ng-show="showdropdown">'
+              var tplbuttonCompile = $compile('<button class="buttonsearch" ng-click="dosearch()" >Search</button>')(scope);
+              var tpldropdownCompile = $compile('<div class="searchdropdown" ng-show="showdropdown">'
                         + '<ul ng-repeat="filter in filters">'
                             + '<span  ng-class="{active: isActive($index,-1)}" ng-mouseover="selectfilterActive($index)"  ng-click="selectfilter($index)" >{{filter.name}} : {{query}}</span>'
                            + '<li><ul>'
@@ -47,9 +48,34 @@ angular.module('lk.search.tokenFilters', [])
               element.append(tpltokenCompile);
               element.append(tplbuttonCompile);
               element.after(tpldropdownCompile);
-
               //ต้องอยู่หลัง element compile เพื่อ bind event
-              var elm = angular.element("#inputbox");
+              var inputelm = element.find('input');
+
+              var tokenlimit = scope.tokenlimit;
+              var dropdownlimit = scope.dropdownlimit;
+
+              scope.$watch('query', function (newValue, oldValue) {
+                  if (!newValue || newValue.length==0) {
+                      resetActive();
+                  } else if (newValue.length==1 && oldValue.length<1) {
+                      scope.doquery();
+                  } else {
+                      angular.forEach(scope.filters, function (filter) {
+                          if (filter.allmatchs) {
+                              filterMatch(filter);
+                          }
+                      });
+                  }
+              });
+
+              function filterMatch(filter) {
+                  filter.allmatchnum = $filter('filter')(filter.allmatchs, scope.query).length;
+                  if (dropdownlimit && dropdownlimit>0) {
+                      filter.matchs = $filter('filter')(filter.allmatchs, scope.query).slice(0, dropdownlimit);
+                  } else {
+                      filter.matchs = $filter('filter')(filter.allmatchs, scope.query);
+                  }
+              }
 
               //Dropdown search
               scope.doquery = function () {
@@ -58,7 +84,8 @@ angular.module('lk.search.tokenFilters', [])
                           if (filter.uri) {
                               $http({ method: 'GET', url: filter.uri, params: { query: scope.query } })
                                   .success(function (data, status) {
-                                      filter.matchs = data;
+                                      filter.allmatchs = data;
+                                      filterMatch(filter);
                                       filter.status = status;
                                   });
                           }
@@ -103,13 +130,13 @@ angular.module('lk.search.tokenFilters', [])
                               }
                               i++;
                           });
-                          if (notfoundq) {
+                          if (notfoundq && scope.tokens.length <= tokenlimit) {
                               tk.queries.push(newquery);
                           }
                           notfoundtk = false;
                       }
                   });
-                  if (notfoundtk) {
+                  if (notfoundtk && scope.tokens.length <= tokenlimit) {
                       var newidx = scope.tokens.push(token) - 1;
                   }
               }
@@ -139,8 +166,10 @@ angular.module('lk.search.tokenFilters', [])
                   scope.showdropdown = true;
               }
 
-              var resetActive = function () {
-                  scope.query = "";
+              var resetActive = function (notclearquery) {
+                  if (!notclearquery) {
+                      scope.query = "";
+                  }
                   scope.matchactive = -1;
                   scope.filteractive = -1;
                   scope.showdropdown = false;
@@ -162,12 +191,13 @@ angular.module('lk.search.tokenFilters', [])
               }
 
               scope.selectfilter = function (activeIdx) {
+                  console.log(scope.query);
                   var tk = new token(scope.filters[activeIdx], scope.query);
                   inserttoken(new token(scope.filters[activeIdx], scope.query));
                   scope.filteractive = activeIdx;
                   scope.showdropdown = false;
                   resetActive();
-                  elm.focus();
+                  inputelm.focus();
               }
               scope.selectmatch = function (parentIdx, activeIdx) {
                   var q = scope.filters[parentIdx].matchs[activeIdx].Name;
@@ -177,16 +207,16 @@ angular.module('lk.search.tokenFilters', [])
                   scope.filteractive = parentIdx;
                   scope.showdropdown = false;
                   resetActive();
-                  elm.focus();
+                  inputelm.focus();
               }
 
 
-              elm.bind('blur', function (evt) {
-                  resetActive();
+              inputelm.bind('blur', function (evt) {
+                  resetActive(true);
               });
 
               //bind keyboard events: arrows up(38) / down(40), enter(13) and tab(9), esc(27)
-              elm.bind('keydown', function (evt) {
+              inputelm.bind('keydown', function (evt) {
 
                   //typeahead is open and an "interesting" key was pressed
                   if (scope.filters.length === 0 || HOT_KEYS.indexOf(evt.which) === -1) {

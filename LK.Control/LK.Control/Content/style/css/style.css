@@ -69,7 +69,7 @@ li {
   visibility: hidden;
 }
 /* line 62, ../sass/style.scss */
-.searchtoken #token {
+.searchtoken .token {
   border: 0;
 }
 
@@ -86,12 +86,12 @@ li {
 }
 
 /* line 77, ../sass/style.scss */
-#buttonsearch {
+.buttonsearch {
   float: right;
 }
 
 /* line 81, ../sass/style.scss */
-#searchdropdown {
+.searchdropdown {
   border: 2px solid #067475;
   padding: 10px;
   position: absolute;
@@ -100,7 +100,7 @@ li {
   background: #fff;
 }
 /* line 89, ../sass/style.scss */
-#searchdropdown li {
+.searchdropdown li {
   padding-bottom: 3px;
 }
 /* line 91, ../sass/style.scss */
@@ -108,10 +108,10 @@ li {
   background: #eee;
 }*/
 
-#searchdropdown li .active {
+.searchdropdown li .active {
   background: #eee;
 }
 
-#searchdropdown ul .active {
+.searchdropdown ul .active {
   background: #eee;
 }
