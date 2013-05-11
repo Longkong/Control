@@ -11,6 +11,7 @@ namespace LK.Control.Models
         public string name { get; set; }
         public string uri { get; set; }
         public string moreuri { get; set; }
+        public string createuri { get; set; }
         public List<EntityFilter> filters { get; set; }
     }
 

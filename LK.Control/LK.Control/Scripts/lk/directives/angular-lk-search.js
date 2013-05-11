@@ -34,7 +34,7 @@ angular.module('lk.search.tokenFilters', [])
               var tplbuttonCompile = $compile('<button class="buttonsearch" ng-click="dosearch()" >Search</button>')(scope);
               var tpldropdownCompile = $compile('<div class="searchdropdown" ng-show="showdropdown">'
                         + '<ul ng-repeat="filter in filters">'
-                            + '<span  ng-class="{active: isActive($index,-1)}" ng-mouseover="selectfilterActive($index)"  ng-click="selectfilter($index)" >{{filter.name}} : {{query}}</span>'
+                            + '<li  ng-class="{active: isActive($index,-1)}" ng-mouseover="selectfilterActive($index)"  ng-click="selectfilter($index)" >{{filter.name}} : {{query}}</li>'
                            + '<li><ul>'
                              + '<li ng-repeat="match in filter.matchs" ng-class="{active: isActive($parent.$index,$index) }" ng-mouseover="selectmatchActive($parent.$index,$index)" ng-click="selectmatch($parent.$index,$index)" >'
                              + '<span>{{match.Name}} <em>{{match.Description}}</em></span>'
@@ -55,9 +55,9 @@ angular.module('lk.search.tokenFilters', [])
               var dropdownlimit = scope.dropdownlimit;
 
               scope.$watch('query', function (newValue, oldValue) {
-                  if (!newValue || newValue.length==0) {
+                  if (!newValue || newValue.length == 0) {
                       resetActive();
-                  } else if (newValue.length==1 && oldValue.length<1) {
+                  } else if (newValue.length == 1 && oldValue.length < 1) {
                       scope.doquery();
                   } else {
                       angular.forEach(scope.filters, function (filter) {
@@ -70,7 +70,7 @@ angular.module('lk.search.tokenFilters', [])
 
               function filterMatch(filter) {
                   filter.allmatchnum = $filter('filter')(filter.allmatchs, scope.query).length;
-                  if (dropdownlimit && dropdownlimit>0) {
+                  if (dropdownlimit && dropdownlimit > 0) {
                       filter.matchs = $filter('filter')(filter.allmatchs, scope.query).slice(0, dropdownlimit);
                   } else {
                       filter.matchs = $filter('filter')(filter.allmatchs, scope.query);
@@ -125,18 +125,19 @@ angular.module('lk.search.tokenFilters', [])
                               //ไม่ให้ query ซ้ำ
                               if (newquery.indexOf(query) >= 0) {
                                   notfoundq = false;
+                                  tk.queries.splice(i,1,newquery);
                               } else {
                                   notfoundq = true;
                               }
                               i++;
                           });
-                          if (notfoundq && scope.tokens.length <= tokenlimit) {
+                          if (notfoundq && (!tokenlimit || tokenlimit == 0 || tk.queries.length <= tokenlimit)) {
                               tk.queries.push(newquery);
                           }
                           notfoundtk = false;
                       }
                   });
-                  if (notfoundtk && scope.tokens.length <= tokenlimit) {
+                  if (notfoundtk && (!tokenlimit || tokenlimit == 0 || scope.tokens.length <= tokenlimit)) {
                       var newidx = scope.tokens.push(token) - 1;
                   }
               }
@@ -191,7 +192,6 @@ angular.module('lk.search.tokenFilters', [])
               }
 
               scope.selectfilter = function (activeIdx) {
-                  console.log(scope.query);
                   var tk = new token(scope.filters[activeIdx], scope.query);
                   inserttoken(new token(scope.filters[activeIdx], scope.query));
                   scope.filteractive = activeIdx;
@@ -272,7 +272,7 @@ angular.module('lk.search.tokenFilters', [])
 
 angular.module('lk.search.typeandmore', [])
 
-.directive('lkTypeandmore', function ($compile, $http, $parse) {
+.directive('lkTypeandmore', function ($compile, $http, $parse, $filter) {
     var HOT_KEYS = [9, 13, 27, 38, 40];
     return {
         require: 'ngModel',
@@ -280,25 +280,71 @@ angular.module('lk.search.typeandmore', [])
 
             //Create Context for search
             //รับค่า attribute มาใช้ ส่ง link ไปสร้าง model
-            var getter = $parse(attrs.lkTokenfilters), setter = getter.assign, value = getter(scope), options = {};
-
+            var getter = $parse(attrs.lkTypeandmore), setter = getter.assign, value = getter(scope), options = {};
+            var maxfa = 0;
             //Create Context for search
             $http({ method: 'GET', url: value }).success(function (data, status) {
-                $scope.typeandmoremodel = data;
-                $scope.filters = data.filters;
+                scope.typeandmoremodel = data;
+                scope.filters = data.filters;
+                var add = 0
+                if (data.moreuri) {
+                    compilemore();
+                    add++;
+                    scope.moreidx = scope.filters.length + add-1;
+                }
+                if (data.createuri) {
+                    compilecreate();
+                    add++;
+                    scope.createidx = scope.filters.length + add-1;
+                }
+                maxfa = scope.filters.length + add;
             });
 
 
-            var tpldropdownCompile = $compile('<div id="searchdropdown" ng-show="showdropdown">'
-                            + '<ul ng-repeat="filter in filters">'
-                                + '<span  ng-class="{active: isActive($index,-1)}" ng-mouseover="selectfilterActive($index)"  ng-click="selectfilter($index)" >{{filter.name}}</span>'
+            var tpldropdownCompile = $compile('<div class="searchdropdown" ng-show="showdropdown">'
+                            + '<ul class="dropdownlist" ng-repeat="filter in filters">'
+                                + '<li  ng-class="{active: isActive($index,-1)}" ng-mouseover="selectfilterActive($index)"  ng-click="selectfilter($index)" >{{filter.name}}</li>'
                                  + '<li ng-repeat="match in filter.matchs" ng-class="{active: isActive($parent.$index,$index) }" ng-mouseover="selectmatchActive($parent.$index,$index)" ng-click="selectmatch($parent.$index,$index)" >'
                                  + '<span>{{match.Name}} <em>{{match.Description}}</em></span>'
                                  + '</li>'
                             + '</ul>'
-                             + '<p ng-click="doSearchMore()">Search More..</p>'
                         + '</div>')(scope);
             element.after(tpldropdownCompile);
+            var tplmore = '<ul><li ng-click="doSearchMore()" ng-class="{active: isActive(moreidx,-1)}" ng-mouseover="selectfilterActive(moreidx)">Search More..{{query}}</li></ul>';
+            var tplcreate = '<ul><li ng-click="doCreate()" ng-class="{active: isActive(createidx,-1)}" ng-mouseover="selectfilterActive(createidx)">Create..{{query}}</li></ul>';
+
+            function compilemore() {
+                element.next().append($compile(tplmore)(scope));
+            }
+
+            function compilecreate() {
+                element.next().append($compile(tplcreate)(scope));
+            }
+
+            var dropdownlimit = scope.dropdownlimit;
+
+            scope.$watch('query', function (newValue, oldValue) {
+                if (!newValue || newValue.length == 0) {
+                    resetActive();
+                } else if (newValue.length == 1 && oldValue.length < 1) {
+                    scope.doquerymore();
+                } else {
+                    angular.forEach(scope.filters, function (filter) {
+                        if (filter.allmatchs) {
+                            filterMatch(filter);
+                        }
+                    });
+                }
+            });
+
+            function filterMatch(filter) {
+                filter.allmatchnum = $filter('filter')(filter.allmatchs, scope.query).length;
+                if (dropdownlimit && dropdownlimit > 0) {
+                    filter.matchs = $filter('filter')(filter.allmatchs, scope.query).slice(0, dropdownlimit);
+                } else {
+                    filter.matchs = $filter('filter')(filter.allmatchs, scope.query);
+                }
+            }
 
             //Dropdown search
             scope.doquerymore = function () {
@@ -307,7 +353,8 @@ angular.module('lk.search.typeandmore', [])
                         if (filter.uri) {
                             $http({ method: 'GET', url: filter.uri, params: { query: scope.query } })
                                 .success(function (data, status) {
-                                    filter.matchs = data;
+                                    filter.allmatchs = data;
+                                    filterMatch(filter);
                                     filter.status = status;
                                 });
                         }
@@ -318,10 +365,20 @@ angular.module('lk.search.typeandmore', [])
                 }
             }
 
-            //Dropdown search
             scope.doSearchMore = function () {
                 if (scope.typeandmoremodel.moreuri) {
                     $http({ method: 'GET', url: scope.typeandmoremodel.moreuri, params: { filters: scope.filters } })
+                        .success(function (data, status) {
+                            filter.matchs = data;
+                            filter.status = status;
+                        });
+                }
+                resetActive();
+            }
+
+            scope.doCreate = function () {
+                if (scope.typeandmoremodel.createuri) {
+                    $http({ method: 'GET', url: scope.typeandmoremodel.createuri, params: { filters: scope.filters } })
                         .success(function (data, status) {
                             filter.matchs = data;
                             filter.status = status;
@@ -347,6 +404,11 @@ angular.module('lk.search.typeandmore', [])
 
 
             scope.isActive = function (filterIdx, matchIdx) {
+                if (scope.filteractive == filterIdx) {
+                    if (scope.matchactive == matchIdx) {
+                        //console.log(filterIdx, matchIdx);
+                    }
+                }
                 return scope.filteractive == filterIdx && scope.matchactive == matchIdx;
             };
 
@@ -393,26 +455,25 @@ angular.module('lk.search.typeandmore', [])
                 evt.preventDefault();
                 var fa = scope.filteractive;
                 var ma = scope.matchactive;
-                var maxfa = scope.filters.length;
                 if (evt.which === 40) {
-                    if (scope.filters[fa]) {
-                        if (scope.filters[fa].matchs && scope.filters[fa].matchs.length - 1 > ma) {
-                            scope.matchactive = ma + 1;
-                        } else {
-                            scope.filteractive = (fa + 1) % maxfa;
-                            scope.matchactive = -1;
-                        }
+                    if (scope.filters[fa] && scope.filters[fa].matchs && scope.filters[fa].matchs.length - 1 > ma) {
+                        scope.matchactive = ma + 1;
+                    } else {
+                        scope.filteractive = (fa + 1) % maxfa;
+                        scope.matchactive = -1;
                     }
                     scope.$digest();
 
                 } else if (evt.which === 38) {
-                    if (scope.filters[fa]) {
-                        if (scope.filters[fa].matchs && -1 < ma) {
-                            scope.matchactive = ma - 1;
-                        } else {
-                            var iff = (fa - 1) > -1;
-                            scope.filteractive = (iff ? fa : maxfa) - 1;
+                    if (scope.filters[fa] &&  scope.filters[fa].matchs && -1 < ma) {
+                        scope.matchactive = ma - 1;
+                    } else {
+                        var iff = (fa - 1) > -1;
+                        scope.filteractive = (iff ? fa : maxfa) - 1;
+                        if (scope.filters[scope.filteractive]) {
                             scope.matchactive = (scope.filters[scope.filteractive].matchs ? scope.filters[scope.filteractive].matchs.length : 0) - 1;
+                        } else {
+                            scope.matchactive = - 1;
                         }
                     }
                     scope.$digest();

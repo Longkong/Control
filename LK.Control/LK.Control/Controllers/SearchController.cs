@@ -64,7 +64,8 @@ namespace LK.Control.Controllers
             {
                 name = "DemoTransaction",
                 uri = "/api/DemoTransaction",
-                moreuri = "/SearchMore"
+                moreuri = "/SearchMore",
+                createuri = "/CreateMore"
             };
 
             var fils = new List<EntityFilter>();

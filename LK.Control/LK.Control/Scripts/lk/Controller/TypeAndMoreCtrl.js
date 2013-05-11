@@ -7,7 +7,7 @@ function SearchTypeAndMoreCtrl($scope,$http) {
     $scope.filters = undefined;
     $scope.query = "";
 
-   
+    $scope.dropdownlimit = 3;
 
     $scope.onSelectmatch = function (selectitem) {
         console.log(selectitem);

@@ -6,7 +6,7 @@
 <h2>Search TypeAndMore</h2>
 <div ng-app="TypeAndMore">
     <div ng-controller="SearchTypeAndMoreCtrl">
-    <input lk-typeandmore="'/search/CreateSearchTypeAndMore'" ng-model="query" ng-change="doquerymore()" />
+    <input lk-typeandmore="'/search/CreateSearchTypeAndMore'" ng-model="query" />
     @*<div id="searchdropdown" ng-show="showdropdown">
         <ul ng-repeat="filter in filters">
             <span ng-class="{active: isActive($index,-1)}" ng-mouseover="selectfilterActive($index)"  ng-click="selectfilter($index)">{{filter.name}} </span>
@@ -20,6 +20,6 @@
 
 @section scripts {
     <script src="~/Scripts/angular.js"></script>
-    <script src="~/Scripts/lk/directives/angular-lk.js"></script>
+    <script src="~/Scripts/lk/directives/angular-lk-search.js"></script>
     <script src="~/Scripts/lk/Controller/TypeAndMoreCtrl.js"></script>
 }
