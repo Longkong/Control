@@ -15,6 +15,9 @@ namespace LK.Control.Controllers
         {
             return View();
         }
-
+        public ActionResult popover()
+        {
+            return PartialView();
+        }
     }
 }

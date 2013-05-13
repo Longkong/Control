@@ -20,6 +20,9 @@ namespace LK.Control.Models
         public string name { get; set; }
         public string uri { get; set; }
         public List<string> queries { get; set; }
+        public List<string> timeframes { get; set; }
+        public DateTime startdate { get; set; }
+        public DateTime enddate { get; set; }
     }
 
     public class RequestDemoSearch

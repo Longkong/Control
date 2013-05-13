@@ -1,4 +1,7 @@
-﻿<div id="body">
+﻿@*@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")*@
+
+<div id="body">
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
@@ -8,44 +11,115 @@
             <p>
                 this project only control test and example  
             </p>
-            
+
         </div>
     </section>
 
-<head>
-    <script src="~/Scripts/angular.js"></script>
-    <script src="~/Scripts/ui-bootstrap-tpls-0.2.0.js"></script>
-    <script src="~/Scripts/lk/Controller/TimeframeCtrl.js"></script>
+    <head>
+        <link href="~/Content/bootstrap-combined.min.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+        <script src="~/Scripts/angular.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/angular-strap.js"></script>
+    <script src="~/Scripts/ui-bootstrap-tpls-0.3.0.js"></script>
+<script src="~/Scripts/jquery-ui-1.10.2.min.js"></script>
+        <script src="~/Scripts/lk/Controller/TimeframeCtrl.js"></script>
+        <link href="~/Content/style.css" rel="stylesheet" />
 
-</head>
+        
+    </head>
+
 
     <div ng-app="myApp">
-        <div ng-controller="SettingsController"  >
+
+        <div ng-controller="TimeFrameFilterCtrl">
+           
+            <button popover-placement="bottom" popover="On the Bottom!"  class="btn">Selectdate</button>
+     
+
+
+
+            
             <div ng-repeat="Filter in Filters">
-            <ul  >
-                <h2>Timeframe</h2>
+                <ul style="font-size: large; font-weight: bold">
+                    {{Filter.name}}  | <a href="" ng-click="removeContact($index)">X</a> ]
          
-              <li  ng-repeat="tf in Filter.timeframes" ng-click="addDate(tf,$parent.$index)" style= "background-color:gray ; font-size:medium; " >{{tf}}</li>
-             
-                   
-            </ul>
-            <hr>
-            <div collapse="Filter.isCollapsed"    ng-model="Filter.isCollapsed"  >
+              <li ng-repeat="tf in Filter.timeframes" ng-click="addDate(tf,$parent.$index)" style="background-color: #B8B894; font-size: medium; font-weight: bold;">{{tf}}
+
+              </li>
+
+
+                </ul>
+                <hr>
+                <div collapse="Filter.isCollapsed" ng-model="Filter.isCollapsed">
+                
+                    <li ng-hide="Filter.isCollapsed">StartDate:</li>
+ <input type="text"  ng-hide="Filter.isCollapsed" ng-model="Filter.startdate"  datepicker> 
+
+                  EndDate:
+                    <input type="text"  ng-hide="Filter.isCollapsed" ng-model="Filter.enddate" datepicker>
       
-                <li  ng-hide="Filter.isCollapsed"   >StartDate:</li> <input type="text" id="Startdate" ng-hide="Filter.isCollapsed"  ng-model="Filter.startdate"  datepicker >
-
-                 <li  ng-hide="Filter.isCollapsed"   >EndDate:</li>   <input type="text" id="Enddate" ng-hide="Filter.isCollapsed"  ng-model="Filter.enddate"  datepicker >
-              
-            </div>
-
+  
+                </div>
 
             </div>
-     <li>[ <a href="" ng-click="addContact()">add</a> ]</li>  
-  <button>Cancel</button>     <button ng-click="done()">Done</button>  
+
+
+<div class="multiple-select-wrapper">
+  <div class="selected-items-box">
+    <span class="dropdown-icon"></span>
+        <span  title="{{Adddropdown.name}}">Add</span>
+
+  
+                        </div>
+        <div class="list">
+                 <ul class="items-list">
+                        <li ng-repeat="Adddropdown in Adddropdowns">
+                                <input type="checkbox" ng-model="Adddropdown.selected" ng-click="addContact(Adddropdown.indexline,Adddropdown.selected,Adddropdown.name)" />
+                
+				<span>{{Adddropdown.name}}</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+ <button>Cancel</button>
+            <button ng-click="done(Filter)">Done</button>
+            @*   <div ng-repeat="sd in showdetail"> 
+                    <ul ng-model="sd.name" title="sd.name"> {{sd.name}} </ul>
+              <input type="text" ng-model="sd.name"/>
+           
+           
+               </div> *@
+    
         </div>
 
- 
+    @*<div ng-controller="TimeFrameFilterCtrl">
+        <div ng-repeat="sd in showdetail"> 
+              <input type="text" ng-model="sd.name"/>
+                <li>[ <a href="" ng-click="ck()">add</a> ]</li>
+           
+               </div> 
+
+    </div>  *@
+            
+            
+          @*  <ul ng-model="sd.name" title="sd.name"> {{sd.name}} </ul>*@
+
+
+<div ng-controller="TimeFrameFilterCtrl2">
+        <div ng-repeat="sd in showdetail2"> 
+              <input type="text" ng-model="sd.name"/>
+        @*        <li>[ <a href="" ng-click="ck()">add</a> ]</li>*@
+           
+               </div> 
+
+    </div>
+     
     </div>
 
 
-    </div>
+</div>
+

@@ -38,7 +38,8 @@ namespace LK.Control.Controllers
             fils.Add(new EntityFilter() { name = "CreateBy" });
             fils.Add(new EntityFilter() { name = "master1", uri = "/api/Master1" });
             fils.Add(new EntityFilter() { name = "master2", uri = "/api/Master2" });
-
+            fils.Add(new EntityFilter() { name = "Date1", timeframes = new List<string> { "This Month", "Latest 3 Months", "All Date" } });
+            fils.Add(new EntityFilter() { name = "Date2", timeframes = new List<string> { "This Month", "Latest 3 Months", "All Date" } });
             a.filters = fils;
             var response = JsonConvert.SerializeObject(a);
 
