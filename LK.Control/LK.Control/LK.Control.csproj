@@ -629,8 +629,8 @@
     <Content Include="Scripts\lk\Controller\testInfiniteScroll.js" />
     <Content Include="Scripts\lk\Controller\TimeframeCtrl.js" />
     <Content Include="Scripts\lk\Controller\TypeAndMoreCtrl.js" />
+    <Content Include="Scripts\lk\Controller\uiTypeAheadCtrl.js" />
     <Content Include="Scripts\lk\directives\angular-lk-search.js" />
-    <Content Include="Scripts\lk\directives\angular-lk.js" />
     <Content Include="Scripts\lk\test\e2e\test-e2e-angular-lk.js" />
     <Content Include="Scripts\lk\test\jasmine\firstItest.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />

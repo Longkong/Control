@@ -6,7 +6,7 @@
 <h2>Search TypeAndMore</h2>
 <div ng-app="TypeAndMore">
     <div ng-controller="SearchTypeAndMoreCtrl">
-    <input lk-typeandmore="'/search/CreateSearchTypeAndMore'" ng-model="query" />
+    <input lk-typeandmore="'/search/CreateSearchTypeAndMore'" ng-model="query" placeholder="Select {{typeandmoremodel.name}}" />
     @*<div id="searchdropdown" ng-show="showdropdown">
         <ul ng-repeat="filter in filters">
             <span ng-class="{active: isActive($index,-1)}" ng-mouseover="selectfilterActive($index)"  ng-click="selectfilter($index)">{{filter.name}} </span>

@@ -62,16 +62,15 @@ namespace LK.Control.Controllers
         {
             var a = new ResponseModelSearch()
             {
-                name = "DemoTransaction",
-                uri = "/api/DemoTransaction",
+                name = "Master1",
+                uri = "/api/Master1",
                 moreuri = "/SearchMore",
                 createuri = "/CreateMore"
             };
 
             var fils = new List<EntityFilter>();
-            fils.Add(new EntityFilter() { name = "code" });
-            fils.Add(new EntityFilter() { name = "master1", uri = "/api/Master1" });
-            fils.Add(new EntityFilter() { name = "master2", uri = "/api/Master2" });
+            fils.Add(new EntityFilter() { name = "name" });
+            fils.Add(new EntityFilter() { name = "Description" });
 
             a.filters = fils;
             var response = JsonConvert.SerializeObject(a);
