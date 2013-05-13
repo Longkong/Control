@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@section scripts{
+    <script src="~/Scripts/select2.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-ui.js"></script>
+    <script src="~/Scripts/lk/Controller/Select2App.js"></script>
+    <link href="~/Content/select2.css" rel="stylesheet" />
+    <script>
+        $(document).ready(function () {
+            $("#e5").select2({
+                placeholder: 'select a state',
+                allowClear: true,
+                minimumInputLength: 1,
+                query: function (query) {
+                    var data = { results: [] }, i, j, s;
+                    for (i = 1; i < 5; i++) {
+                        s = "";
+                        for (j = 0; j < i; j++) { s = s + query.term; }
+                        data.results.push({ id: query.term + i, text: s });
+                    }
+                    query.callback(data);
+                }
+            });
+        });
+
+    </script>
+}
+
+<h2>Test Select2</h2>
+
+<select id="e1">
+    <option value="AL">Alabama</option>
+    <option value="WY">Wyoming</option>
+</select>
+
+
+<p>
+    <input type="hidden" id="e5" /></p>
+
+<section ng-app="myApp" ng-controller="MainCtrl">
+
+    <input type="text" ui-select2="version4" ng-model="version4model" data-placeholder="Pick it" style="width:300px;" />
+
+    <input type="text" ui-select2="options" ng-model="selectedOptions" style="width:300px;" />
+
+    <button ng-click="addmore()">addmore</button>
+</section>

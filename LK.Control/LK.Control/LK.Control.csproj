@@ -170,6 +170,7 @@
     <Compile Include="Controllers\Master2Controller.cs" />
     <Compile Include="Controllers\PathService.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\Select2Controller.cs" />
     <Compile Include="Controllers\TimeframeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -626,6 +627,7 @@
     <Content Include="Scripts\knockout-2.2.1.js" />
     <Content Include="Scripts\lk\Controller\direcCtrl.js" />
     <Content Include="Scripts\lk\Controller\SearchUICtrl.js" />
+    <Content Include="Scripts\lk\Controller\Select2App.js" />
     <Content Include="Scripts\lk\Controller\testInfiniteScroll.js" />
     <Content Include="Scripts\lk\Controller\TimeframeCtrl.js" />
     <Content Include="Scripts\lk\Controller\TypeAndMoreCtrl.js" />
@@ -655,6 +657,7 @@
     <Content Include="Scripts\ui-bootstrap-0.3.0.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.3.0.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.3.0.min.js" />
+    <Content Include="Scripts\uiSelect2.js" />
     <Content Include="Views\Home\UIBootstrapTypeAhead.cshtml" />
     <Content Include="Views\Search\Directive.cshtml" />
     <Content Include="Views\Search\part.cshtml" />
@@ -664,6 +667,7 @@
     <Content Include="Views\Search\SearchAndMore.cshtml" />
     <Content Include="Views\Search\SearchMore.cshtml" />
     <Content Include="Views\Search\Infinitescholl.cshtml" />
+    <Content Include="Views\Select2\Index.cshtml" />
     <TypeScriptCompile Include="TypeScripts\test.ts" />
     <Content Include="TypeScripts\test.js">
       <DependentUpon>test.ts</DependentUpon>
