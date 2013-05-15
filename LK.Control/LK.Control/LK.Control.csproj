@@ -182,6 +182,7 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\angular-ui.css" />
     <Content Include="Content\angular-ui.min.css" />
+    <Content Include="Content\bootstrap-combined.min.css" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -624,6 +625,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.1.debug.js" />
     <Content Include="Scripts\knockout-2.2.1.js" />
+    <Content Include="Scripts\lk\Controller\directimeframeCtrl.js" />
     <Content Include="Scripts\lk\Controller\direcCtrl.js" />
     <Content Include="Scripts\lk\Controller\SearchUICtrl.js" />
     <Content Include="Scripts\lk\Controller\testInfiniteScroll.js" />
@@ -631,6 +633,7 @@
     <Content Include="Scripts\lk\Controller\TypeAndMoreCtrl.js" />
     <Content Include="Scripts\lk\Controller\uiTypeAheadCtrl.js" />
     <Content Include="Scripts\lk\directives\angular-lk-search.js" />
+    <Content Include="Scripts\lk\directives\angular-lk-timeframe.js" />
     <Content Include="Scripts\lk\test\e2e\test-e2e-angular-lk.js" />
     <Content Include="Scripts\lk\test\jasmine\firstItest.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -664,6 +667,7 @@
     <Content Include="Views\Search\SearchAndMore.cshtml" />
     <Content Include="Views\Search\SearchMore.cshtml" />
     <Content Include="Views\Search\Infinitescholl.cshtml" />
+    <Content Include="Views\Timeframe\Directive.cshtml" />
     <TypeScriptCompile Include="TypeScripts\test.ts" />
     <Content Include="TypeScripts\test.js">
       <DependentUpon>test.ts</DependentUpon>

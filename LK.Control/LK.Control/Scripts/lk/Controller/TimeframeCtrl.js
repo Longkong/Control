@@ -40,7 +40,7 @@ function TimeFrameFilterCtrl($scope, $http) {
 
 
     $scope.Adddropdowns = Filtername;
-
+    console.log($scope.Adddropdowns);
     //Change date
     $scope.change = function (startdate) {
         console.log(startdate);
@@ -86,9 +86,9 @@ function TimeFrameFilterCtrl($scope, $http) {
     };
     
    
-    $scope.getSelectedItemsOnly = function (item) {
-        return item.selected;
-    };
+    //$scope.getSelectedItemsOnly = function (item) {
+    //    return item.selected;
+    //};
 
     $scope.done = function () {
      
@@ -106,12 +106,13 @@ function TimeFrameFilterCtrl($scope, $http) {
   
 
     $('.multiple-select-wrapper .list').bind('click', function (e) {
-     
+       
         e.stopPropagation();
     });
 
 
     $('.selected-items-box').bind('click', function (e) {
+        console.log(e);
         e.stopPropagation();
         $('.multiple-select-wrapper .list').toggle('slideDown');
     });
@@ -119,6 +120,7 @@ function TimeFrameFilterCtrl($scope, $http) {
   
 
     $(document).bind('click', function () {
+
         $('.multiple-select-wrapper .list').slideUp();
     });
 
