@@ -1,15 +1,12 @@
 ﻿/// <reference path="../../angular.js" />
 
+//var tpltokenCompile;
+var module=angular.module('lk.timeframe', ['lk.timeframe.tokenFilters']);
+var buttonId, html, title;
 
-angular.module('lk.timeframe', ['lk.timeframe.tokenFilters']);
-
-
-
-
-
-angular.module('lk.timeframe.tokenFilters', ['ui']).directive("lkTimeframefilters", function ($compile, $document, $parse, $http) {
+angular.module('lk.timeframe.tokenFilters', []).directive("lkTimeframefilters", function ($compile, $document, $parse, $http) {
     return {
-        //restrict: 'A',
+        restrict: 'A',
         requrie: 'ngModel',
         link: function (scope, element, attrs, ngModelCtrl) {
 
@@ -21,9 +18,11 @@ angular.module('lk.timeframe.tokenFilters', ['ui']).directive("lkTimeframefilter
             var Filtercount = 0;
             var datenow = new Date();
             var datestring = datenow.getDate() + '/' + datenow.getMonth() + '/' + datenow.getFullYear();
-            $http({ method: 'GET', url: '/search/CreateSearch' }).success(function (data, status) {
+            //$http({ method: 'GET', url: '/search/CreateSearch' }).success(function (data, status) {
            
+            var getter = $parse(attrs.lkTimeframefilters), setter = getter.assign, value = getter(scope), options = {};
 
+            $http({ method: 'GET', url: value }).success(function (data, status) {
                 for (var i = 0; i < data.filters.length; i++) {
 
                     if (data.filters[i].timeframes != null) {
@@ -45,12 +44,12 @@ angular.module('lk.timeframe.tokenFilters', ['ui']).directive("lkTimeframefilter
                     }
 
                 }
-                scope.countline = "("+Filtercount+")";
+                scope.countline = "( "+Filtercount+" )";
                 scope.Filters.push(Filtersum[0]);
             });
         
             scope.Adddropdowns = Filtername;
-
+            //console.log(scope.Adddropdowns);
             scope.addDate = function (tf, index) {
                 this.Filters[index].typedate = tf;
                 if (tf == "Period") {
@@ -77,7 +76,7 @@ angular.module('lk.timeframe.tokenFilters', ['ui']).directive("lkTimeframefilter
 
             //Select Add
             scope.addContact = function (indexline, selected, name) {
-         
+                console.log(selected);
                 if (selected) {
                     this.Filters.push(Filtersum[indexline]);
                 } else {
@@ -90,13 +89,15 @@ angular.module('lk.timeframe.tokenFilters', ['ui']).directive("lkTimeframefilter
             };
             //Show Line
             scope.showline = function (showline) {
-                console.log(showline);
+           
                 if (showline) {
                     this.showhide = "  Hide Date line  ";
                 } else {
                     this.showhide = "  Show Date line  ";
                 }
             };
+
+          
             $(document).on('click', '.multiple-select-wrapper .list', function (e) {
        
                 e.stopPropagation();
@@ -115,97 +116,102 @@ angular.module('lk.timeframe.tokenFilters', ['ui']).directive("lkTimeframefilter
 
                 $('.multiple-select-wrapper .list').slideUp();
             });
-      
-            var tpltokenCompile = $compile('<input type="checkbox" ng-model="checked" ng-click="showline(checked)">{{showhide}}{{countline}}<div ng-show="checked"><div >'
+            scope.chk = false;
+          
+            var tpltokenCompile = $compile('<div ng-show=chk class="timeframe ptm prm plm pbm" ><div >'
                              + '<div ng-repeat="Filter in Filters" >'
-                             + '<ul>{{Filter.name}}| <a href="" ng-click="removeContact($index)">X</a> ]'
-                             + '<li ng-repeat="tf in Filter.timeframes" ng-click="addDate(tf,$parent.$index)" >{{tf}}</li></ul>'
+                             + '<div class="clearfix mtm mbm">'
+                             + '<header class="clearfix"><h3 class="pull-left">{{Filter.name}}</h3> <a href="" ng-click="removeContact($index)" class="pull-right">X</a> </header>'
+                             + '<ul class="clearfix" ><li ng-repeat="tf in Filter.timeframes" ng-click="addDate(tf,$parent.$index)" class="pull-left mrm pointer" >{{tf}}</li></ul>'
                              + '<div collapse="Filter.isCollapsed" ng-model="Filter.isCollapsed">'
-                             + '<li ng-hide="Filter.isCollapsed"> StartDate : </li>'
-                             + '<input type="text"  ng-hide="Filter.isCollapsed" ng-model="Filter.startdate"  datepicker> EndDate:'
-                             + '<input type="text"  ng-hide="Filter.isCollapsed" ng-model="Filter.enddate" datepicker>'
+                             + '<div class="form-inline"><ul><li ng-hide="Filter.isCollapsed" class="pull-left"> StartDate : '
+                             + '<input type="text"  ng-hide="Filter.isCollapsed" ng-model="Filter.startdate" datepicker ></li> <li ng-hide="Filter.isCollapsed"  class="pull-left">EndDate:'
+                             + '<input type="text"  ng-hide="Filter.isCollapsed" ng-model="Filter.enddate"  datepicker>'
+                  
+
+                             + '</li></ul></div>'
                              + '</div>'
                              + '</div>'
                              + '</div>'
-                             + '<div class="multiple-select-wrapper"> <div class="selected-items-box">'
+                             + '<div class="multiple-select-wrapper "> <div class="selected-items-box ">'
                              + '<span class="dropdown-icon"></span>'
                              + '<span  title="{{Adddropdown.name}}">Add</span></div>'
                              + '<div class="list"><ul class="items-list">'
                              + '<li ng-repeat="Adddropdown in Adddropdowns">'
                              + '<input type="checkbox" ng-model="Adddropdown.selected" ng-click="addContact(Adddropdown.indexline,Adddropdown.selected,Adddropdown.name)" />'
-                             + '<span>{{Adddropdown.name}}</span></li></ul></div></div>'
+                             + '<span>{{Adddropdown.name}}</span></li></ul></div></div></div>'
                              + '<button>Cancel</button><button ng-click="done(Filter)">Done</button></div>'
                 
 
 
                       )(scope);
+            //ng-click="showdiv()"
+            var tplbuttonCompile = $compile('<button ng-click="showdiv()" >Time frame</button>')(scope);
+           element.append(tplbuttonCompile);
+            //var buttonId, html, title;
+         scope.showdiv = function () {
+
+             this.chk = !scope.chk;
+             element.append(tpltokenCompile);
+
+         };
 
 
-            var buttonId, html, title;
 
             buttonId = Math.floor(Math.random() * 10000000000);
 
             attrs.buttonId = buttonId;
 
-            //element.append(tplbuttonCompile);
 
 
-            element.datepicker({
-                dateFormat: 'dd/mm/yy',
-                onSelect: function (date) {
-                    ngModelCtrl.$setViewValue(date);
-                    scope.$apply();
-                }
-            });
-
-            element.popover({
-                content: tpltokenCompile,
-                html: true,
-                trigger: "manual",
-                title: title
-                , placement: "bottom"
-            });
-
-            var chkshow=true;
-            return element.bind('click', function (e) {
-                var dontBubble, pop;
-                dontBubble = true;
-          element.popover('show'); 
-                //e.stopPropagation();
-                //if (chkshow) {
-                //    console.log(chkshow);
-                //   chkshow = false;
-                //}
-                //else {
-                //    element.popover('hide'); chkshow = true;
-                //}
-            
-
-                //pop = $("#button-" + buttonId);
-
-
-
-
-                //pop.closest(".popover").click(function (e) {
-                  
-                //    if (dontBubble) {
-                //        e.stopPropagation();
-                //    }
-                //});
-
-                //$document.on('click.confirmbutton.' + buttonId, ":not(.popover-content)", function () {
-                //    console.log("sasa");
-                //    //$document.off('click.confirmbutton.' + buttonId);
-                //    //element.popover('hide');
-                //});
-                //$document.on('click.confirmbutton.' + buttonId, ":not(.popover, .popover *)", function() {
-                //    $document.off('click.confirmbutton.' + buttonId);
-                //    element.popover('hide');
-                //});
-            });
+            //    element.datepicker({
+            //    dateFormat: 'dd/mm/yy',
+            //    onSelect: function (date) {
+            //        ngModelCtrl.$setViewValue(date);
+            //        scope.$apply();
+            //    }
+            //});  
+            //element.popover({
+            //    content: tpltokenCompile,
+          
+            //    html: true,
+            //    trigger: "manual",
+            //    title: title ,
+            //    placement: "bottom"
+            //});
+      
+    
+            //var chkshow=true;
+            //return element.bind('click', function (e) {
+            //    var dontBubble, pop;
+            //    dontBubble = true;
+            //    e.stopPropagation();
+             
+            //});
         }
     };
 });
 
 
 
+
+module.directive('datepicker', function () {
+
+
+    return {
+        //restrict: 'A',
+        //require: 'ngModel',
+        link: function (scope, element, attrs, ngModelCtrl) {
+            $(function () {
+                element.datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    onSelect: function (date) {
+                        console.log("aaa");
+                        ngModelCtrl.$setViewValue(date);
+                        scope.$apply();
+                    }
+                });
+            });
+        }
+    }
+});
