@@ -37,8 +37,7 @@
     <script src="~/Scripts/angular-strap.js"></script>
     <script src="~/Scripts/ui-bootstrap-tpls-0.3.0.js"></script>
     <script src="~/Scripts/angular-ui.min.js"></script>
-        @*<script src="~/Scripts/bootstrap-datepicker.js"></script>*@
- @*<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />*@
+
 
   
     <script src="~/Scripts/lk/Controller/directimeframeCtrl.js"></script>
@@ -51,12 +50,30 @@
          .timeframe
           { 
              position: absolute;
-             border:1px solid #0094ff;
+          
              
           }
         .pointer {
             cursor:pointer;
         }
+        .timeframeinner
+          { 
+             position: relative;
+             border:1px solid #0094ff;
+             
+          }
+        .arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+
+	    position: absolute; 
+	border-bottom: 10px solid #EEE;
+    
+    top:-11px;
+    /*border-color:blue;*/
+}
     </style> 
 }
 
