@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Timeframe";
+}
+
+
+
+<link href="~/Content/style/css/style.css" rel="stylesheet" />
+
+<div id="wrap">
+    <h2>Search Tokenfilter Directive</h2>
+    @Html.ActionLink("controller", "index")
+
+    <div ng-app="timeframeToken" >
+        <div ng-controller="TimeframeFilterCtrl">
+                     <div class="timeframetoken" lk-timeframefilters="'/search/CreateSearch'"></div>
+         @*   <button lk-timeframefilters="" >Time frame</button>*@
+    
+        </div>
+    </div>
+</div>
+@*end div ใหญ่*@
+
+
+@section scripts{
+
+     <link href="~/Content/manee-jui.css" rel="stylesheet" />
+    <link href="~/Content/angular-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-combined.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/stylemanee.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.2.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-strap.js"></script>
+    <script src="~/Scripts/ui-bootstrap-tpls-0.3.0.js"></script>
+    <script src="~/Scripts/angular-ui.min.js"></script>
+
+
+  
+    <script src="~/Scripts/lk/Controller/directimeframeCtrl.js"></script>
+    <script src="~/Scripts/lk/directives/angular-lk-timeframe.js"></script>
+    <style>       
+         .timeframetoken
+          { 
+             position: relative;
+          }
+         .timeframe
+          { 
+             position: absolute;
+          
+             
+          }
+        .pointer {
+            cursor:pointer;
+        }
+        .timeframeinner
+          { 
+             position: relative;
+             border:1px solid #0094ff;
+             
+          }
+        .arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+
+	    position: absolute; 
+	border-bottom: 10px solid #EEE;
+    
+    top:-11px;
+    /*border-color:blue;*/
+}
+    </style> 
+}
+

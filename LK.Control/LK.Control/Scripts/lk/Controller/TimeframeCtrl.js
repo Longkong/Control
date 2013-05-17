@@ -40,11 +40,11 @@ function TimeFrameFilterCtrl($scope, $http) {
 
 
     $scope.Adddropdowns = Filtername;
-
-    //Change date
-    $scope.change = function (startdate) {
-        console.log(startdate);
-    };
+ 
+    ////Change date
+    //$scope.change = function (startdate) {
+    //    console.log(startdate);
+    //};
   
 
     //Click Period collapsed show date
@@ -86,9 +86,9 @@ function TimeFrameFilterCtrl($scope, $http) {
     };
     
    
-    $scope.getSelectedItemsOnly = function (item) {
-        return item.selected;
-    };
+    //$scope.getSelectedItemsOnly = function (item) {
+    //    return item.selected;
+    //};
 
     $scope.done = function () {
      
@@ -100,18 +100,18 @@ function TimeFrameFilterCtrl($scope, $http) {
                 );
         filtertext = Filtershow;
         TimeFrameFilterCtrl2($scope, $http);
-        //this.showdetail.push(Filtershow);
-        //console.log($scope.showdetail);
+    
     }
   
 
     $('.multiple-select-wrapper .list').bind('click', function (e) {
-     
+       
         e.stopPropagation();
     });
 
 
     $('.selected-items-box').bind('click', function (e) {
+        console.log(e);
         e.stopPropagation();
         $('.multiple-select-wrapper .list').toggle('slideDown');
     });
@@ -119,6 +119,7 @@ function TimeFrameFilterCtrl($scope, $http) {
   
 
     $(document).bind('click', function () {
+
         $('.multiple-select-wrapper .list').slideUp();
     });
 
@@ -128,13 +129,14 @@ module.directive('datepicker', function () {
  
   
     return {
-        restrict: 'A',
-        require: 'ngModel',
+        //restrict: 'A',
+        //require: 'ngModel',
         link: function (scope, element, attrs, ngModelCtrl) {
             $(function () {
                 element.datepicker({
                     dateFormat: 'dd/mm/yy',
                     onSelect: function (date) {
+                        console.log("aaa");
                         ngModelCtrl.$setViewValue(date);
                         scope.$apply();
                     }
@@ -148,25 +150,6 @@ module.directive('datepicker', function () {
 
 
 
-
-//var module2 = angular.module('myApp1', ['ui.bootstrap']);
-//var filtertext = [];
-function TimeFrameFilterCtrl2($scope, $http) {
-    $scope.showdetail2 = filtertext;
-    console.log($scope.showdetail2);
-    //$scope.Filters = [];
-    //var indextimeframe;
-    //var Filtername = [];
-    //var Filtersum = [];
-    //var Filtercount = 0;
-    //var datenow = new Date();
-    //var datestring = datenow.getDate() + '/' + datenow.getMonth() + '/' + datenow.getFullYear();
-    //console.log($scope.showdetail);
-    //Get values by cotrl
-   
-
-
-}
 
 
 
